@@ -1,9 +1,3 @@
 [build]
-  publish = "."
+  publish = "YEvent-Images"
   command = ""
-
-[[redirects]]
-  from = "/"
-  to = "/YEvent-Images/yadav-daily-news.html"
-  status = 200
-  force = true
