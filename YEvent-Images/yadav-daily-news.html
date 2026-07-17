@@ -195,10 +195,10 @@ footer .updated { color: var(--gold); font-weight: 600; }
 .bday-banner p { font-size: 0.72rem; color: #3a2200; }
 
 /* ── TOP STORIES CAROUSEL ── */
-.carousel-wrap { position: relative; border-radius: 10px; overflow: hidden;
+.carousel-wrap { position: relative; border-radius: 10px; overflow: hidden; width: 100%;
   box-shadow: 0 2px 16px rgba(0,0,0,0.13); margin-bottom: 28px; background:#111; }
-.carousel-track { display: flex; transition: transform 0.55s cubic-bezier(.4,0,.2,1); }
-.carousel-slide { min-width: 100%; position: relative; flex-shrink: 0; }
+.carousel-track { display: flex; transition: transform 0.55s cubic-bezier(.4,0,.2,1); width: 100%; }
+.carousel-slide { flex: 0 0 100%; width: 100%; position: relative; overflow: hidden; }
 .carousel-slide img { width: 100%; height: 340px; object-fit: cover; display: block;
   filter: brightness(0.72); transition: filter 0.4s; }
 .carousel-slide:hover img { filter: brightness(0.82); }
@@ -225,16 +225,71 @@ footer .updated { color: var(--gold); font-weight: 600; }
 .carousel-btn.next { right: 12px; }
 
 /* dots */
-.carousel-dots { position: absolute; bottom: 14px; right: 20px;
-  display: flex; gap: 6px; z-index: 10; }
-.carousel-dot { width: 8px; height: 8px; border-radius: 50%;
+.carousel-dots { position: absolute; bottom: 14px; right: 50%; transform: translateX(50%);
+  display: flex; gap: 7px; z-index: 10; }
+.carousel-dot { width: 9px; height: 9px; border-radius: 50%;
   background: rgba(255,255,255,0.4); cursor: pointer; transition: background 0.25s, transform 0.25s; border: none; }
-.carousel-dot.active { background: var(--gold); transform: scale(1.35); }
+.carousel-dot.active { background: var(--gold); transform: scale(1.4); }
 
 /* slide counter */
 .carousel-counter { position: absolute; top: 14px; right: 16px; z-index: 10;
   background: rgba(0,0,0,0.45); color: white; font-size: 0.7rem; font-family: sans-serif;
   font-weight: 700; padding: 3px 10px; border-radius: 20px; backdrop-filter: blur(4px); }
+
+/* ── MOBILE RESPONSIVE ── */
+@media (max-width: 600px) {
+  /* Masthead */
+  .masthead-top { padding: 10px 14px; flex-direction: column; align-items: flex-start; gap: 6px; }
+  .masthead-logo .emblem { width: 36px; height: 36px; font-size: 1.1rem; }
+  .masthead-logo h1 { font-size: 1.25rem; }
+  .masthead-logo p { font-size: 0.62rem; letter-spacing: 1px; }
+  .masthead-date { text-align: left; font-size: 0.7rem; }
+  .nav-bar { padding: 0 8px; gap: 0; }
+  .nav-bar a { padding: 8px 10px; font-size: 0.7rem; }
+
+  /* Container */
+  .container { padding: 12px 12px; }
+
+  /* Carousel */
+  .carousel-wrap { border-radius: 8px; margin-bottom: 18px; }
+  .carousel-slide img { height: 260px; }
+  .carousel-overlay { padding: 32px 14px 48px; }
+  .carousel-overlay h2 { font-size: 1.05rem; margin-bottom: 5px; }
+  .carousel-overlay p { font-size: 0.76rem; -webkit-line-clamp: 2; }
+  .carousel-meta { font-size: 0.66rem; margin-top: 6px; }
+  .carousel-btn { width: 32px; height: 32px; font-size: 1rem; }
+  .carousel-btn.prev { left: 6px; }
+  .carousel-btn.next { right: 6px; }
+  .carousel-counter { top: 10px; right: 10px; font-size: 0.62rem; padding: 2px 8px; }
+  .carousel-dots { bottom: 10px; gap: 6px; }
+  .carousel-dot { width: 7px; height: 7px; }
+
+  /* News grid */
+  .news-grid { grid-template-columns: 1fr; gap: 12px; }
+  .news-card .nc-img img { height: 140px; }
+
+  /* Section head */
+  .section-head { margin-bottom: 12px; }
+  .section-head h2 { font-size: 0.95rem; }
+
+  /* Festival banner */
+  .festival-banner { padding: 16px 14px; }
+  .festival-banner h2 { font-size: 1.05rem; }
+  .festival-banner p { font-size: 0.78rem; }
+
+  /* Events grid */
+  .events-full { grid-template-columns: 1fr; gap: 12px; }
+
+  /* All news grid */
+  .all-news-grid { grid-template-columns: 1fr; }
+
+  /* Sidebar */
+  .sidebar { gap: 16px; }
+
+  /* Footer */
+  footer { padding: 16px 14px; }
+  footer .footer-inner { flex-direction: column; align-items: flex-start; gap: 6px; }
+}
 </style>
 </head>
 <body>
