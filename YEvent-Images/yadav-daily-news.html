@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YadavHeritage Daily — Hyderabad Yadav Community News</title>
+<style>
+:root {
+  --red: #8B1A1A;
+  --red-light: #b52020;
+  --gold: #c9922a;
+  --bg: #f5f2ec;
+  --white: #ffffff;
+  --text: #1a1a1a;
+  --text-muted: #666;
+  --border: #e0dbd0;
+  --politics: #1a3a8b;
+  --culture: #8B1A1A;
+  --education: #1a6b3a;
+  --community: #7a3a10;
+  --business: #2a2a6b;
+  --sports: #0d6b6b;
+  --religious: #7a4a08;
+  --social: #3a6b1a;
+  --festival: #8B1A1A;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Georgia', 'Times New Roman', serif; background: var(--bg); color: var(--text); }
+a { text-decoration: none; color: inherit; }
+
+/* ── MASTHEAD ── */
+.masthead { background: var(--red); color: white; padding: 0; }
+.masthead-top { display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 32px; border-bottom: 1px solid rgba(255,255,255,0.15); }
+.masthead-logo { display: flex; align-items: center; gap: 14px; }
+.masthead-logo .emblem { width: 48px; height: 48px; border-radius: 50%;
+  background: var(--gold); display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem; flex-shrink: 0; }
+.masthead-logo h1 { font-size: 1.8rem; font-weight: 900; letter-spacing: -0.5px; }
+.masthead-logo p { font-size: 0.72rem; letter-spacing: 2px; text-transform: uppercase; opacity: 0.8; margin-top: 2px; }
+.masthead-date { text-align: right; font-size: 0.78rem; opacity: 0.85; font-family: sans-serif; line-height: 1.5; }
+.nav-bar { display: flex; gap: 2px; padding: 0 32px; overflow-x: auto; }
+.nav-bar a { padding: 9px 16px; font-size: 0.78rem; font-family: sans-serif; font-weight: 600;
+  letter-spacing: 0.5px; text-transform: uppercase; color: rgba(255,255,255,0.85);
+  border-bottom: 3px solid transparent; white-space: nowrap; }
+.nav-bar a:hover, .nav-bar a.active { color: white; border-bottom-color: var(--gold); }
+
+/* ── TICKER ── */
+.ticker-wrap { background: var(--gold); color: white; padding: 6px 0; overflow: hidden; }
+.ticker-inner { display: flex; gap: 60px; animation: ticker 40s linear infinite; white-space: nowrap; padding: 0 32px; }
+.ticker-inner span { font-size: 0.78rem; font-family: sans-serif; font-weight: 700; }
+.ticker-inner span::before { content: "★ "; }
+@keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* ── LAYOUT ── */
+.container { max-width: 1200px; margin: 0 auto; padding: 24px 32px; }
+.grid-main { display: grid; grid-template-columns: 1fr 320px; gap: 28px; }
+.section-head { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; padding-bottom: 10px;
+  border-bottom: 3px solid var(--red); }
+.section-head h2 { font-size: 1.1rem; font-weight: 800; font-family: sans-serif; text-transform: uppercase;
+  letter-spacing: 1px; color: var(--red); }
+.section-head .count { font-size: 0.72rem; font-family: sans-serif; background: var(--red);
+  color: white; padding: 2px 8px; border-radius: 20px; }
+
+/* ── FEATURED STORY ── */
+.featured { background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.08); margin-bottom: 28px; }
+.featured .feat-img { position: relative; }
+.featured .feat-img img { width: 100%; height: 320px; object-fit: cover; display: block; }
+.featured .feat-img .overlay { position: absolute; bottom: 0; left: 0; right: 0;
+  background: linear-gradient(transparent, rgba(0,0,0,0.85));
+  padding: 40px 24px 20px; color: white; }
+.featured .feat-img .overlay h2 { font-size: 1.6rem; font-weight: 800; line-height: 1.3; margin-bottom: 8px; }
+.featured .feat-img .overlay p { font-size: 0.85rem; opacity: 0.9; line-height: 1.5; }
+.featured .feat-meta { padding: 14px 24px; display: flex; align-items: center; gap: 10px; border-top: 1px solid var(--border); }
+
+/* ── NEWS CARDS ── */
+.news-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+.news-card { background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 6px rgba(0,0,0,0.07);
+  display: flex; flex-direction: column; }
+.news-card .nc-img { position: relative; }
+.news-card .nc-img img { width: 100%; height: 160px; object-fit: cover; display: block; }
+.news-card .nc-body { padding: 14px; flex: 1; display: flex; flex-direction: column; }
+.news-card .nc-body h3 { font-size: 0.9rem; font-weight: 700; line-height: 1.4; margin-bottom: 6px; flex: 1; }
+.news-card .nc-body p { font-size: 0.78rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 10px; }
+.news-card .nc-footer { display: flex; align-items: center; justify-content: space-between; margin-top: auto; }
+
+/* NEWS LIST (compact) */
+.news-list { display: flex; flex-direction: column; gap: 0; }
+.news-list-item { display: flex; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--border); }
+.news-list-item:last-child { border-bottom: none; }
+.news-list-item img { width: 80px; height: 60px; object-fit: cover; border-radius: 4px; flex-shrink: 0; }
+.news-list-item .nli-body h4 { font-size: 0.82rem; font-weight: 700; line-height: 1.3; margin-bottom: 4px; }
+.news-list-item .nli-body span { font-size: 0.7rem; color: var(--text-muted); font-family: sans-serif; }
+
+/* ── BADGES ── */
+.badge { display: inline-block; padding: 2px 9px; border-radius: 20px; font-size: 0.66rem;
+  font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: white; font-family: sans-serif; }
+.badge.politics  { background: var(--politics); }
+.badge.culture   { background: var(--culture); }
+.badge.education { background: var(--education); }
+.badge.community { background: var(--community); }
+.badge.business  { background: var(--business); }
+.badge.sports    { background: var(--sports); }
+.badge.religious { background: var(--religious); }
+.badge.social    { background: var(--social); }
+.badge.festival  { background: var(--festival); }
+.badge.featured  { background: var(--gold); }
+
+.meta-date { font-size: 0.7rem; color: var(--text-muted); font-family: sans-serif; }
+
+/* ── SIDEBAR ── */
+.sidebar { display: flex; flex-direction: column; gap: 24px; }
+.sidebar-box { background: white; border-radius: 10px; padding: 18px; box-shadow: 0 1px 6px rgba(0,0,0,0.07); }
+.sidebar-box .sb-head { font-size: 0.8rem; font-weight: 800; font-family: sans-serif; text-transform: uppercase;
+  letter-spacing: 1px; color: var(--red); padding-bottom: 10px; border-bottom: 2px solid var(--red); margin-bottom: 14px; }
+
+/* ── EVENT CARDS ── */
+.event-mini { display: flex; flex-direction: column; gap: 0; }
+.event-item { display: flex; gap: 12px; padding: 11px 0; border-bottom: 1px solid var(--border); }
+.event-item:last-child { border-bottom: none; }
+.event-item .ev-date { background: var(--red); color: white; border-radius: 6px; padding: 6px 8px;
+  text-align: center; min-width: 44px; flex-shrink: 0; font-family: sans-serif; }
+.event-item .ev-date .eday { font-size: 1.1rem; font-weight: 800; line-height: 1; }
+.event-item .ev-date .emon { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.5px; opacity: 0.9; }
+.event-item .ev-info h4 { font-size: 0.8rem; font-weight: 700; line-height: 1.3; margin-bottom: 3px; }
+.event-item .ev-info p { font-size: 0.7rem; color: var(--text-muted); font-family: sans-serif; }
+
+/* ── PERSONALITY CARDS ── */
+.person-list { display: flex; flex-direction: column; gap: 12px; }
+.person-item { display: flex; gap: 10px; align-items: flex-start; }
+.person-item .pav { width: 44px; height: 44px; border-radius: 50%; object-fit: cover;
+  border: 2px solid var(--gold); flex-shrink: 0; background: var(--bg);
+  display: flex; align-items: center; justify-content: center; font-size: 1.2rem; overflow: hidden; }
+.person-item .pav img { width: 100%; height: 100%; object-fit: cover; }
+.person-item .pinfo h4 { font-size: 0.8rem; font-weight: 700; }
+.person-item .pinfo p { font-size: 0.7rem; color: var(--text-muted); font-family: sans-serif; }
+.person-item .pinfo .bday { font-size: 0.68rem; color: var(--gold); font-weight: 700; font-family: sans-serif; }
+
+/* ── FESTIVAL SECTION ── */
+.festival-banner { background: linear-gradient(135deg, #8B1A1A 0%, #c9922a 100%);
+  color: white; border-radius: 10px; padding: 22px 24px; margin-bottom: 28px; }
+.festival-banner h2 { font-size: 1.3rem; font-weight: 900; margin-bottom: 6px; }
+.festival-banner p { font-size: 0.85rem; opacity: 0.9; line-height: 1.5; }
+.festival-banner .fb-meta { display: flex; gap: 14px; margin-top: 14px; flex-wrap: wrap; }
+.festival-banner .fb-chip { background: rgba(255,255,255,0.2); border-radius: 20px;
+  padding: 4px 12px; font-size: 0.72rem; font-family: sans-serif; font-weight: 600; }
+
+/* ── FULL NEWS SECTION ── */
+.all-news-section { margin-top: 36px; }
+.all-news-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+@media (max-width: 900px) { .all-news-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .all-news-grid { grid-template-columns: 1fr; } .grid-main { grid-template-columns: 1fr; } .news-grid { grid-template-columns: 1fr; } }
+
+/* ── ALL EVENTS ── */
+.events-full { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 28px; }
+.event-card { background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 6px rgba(0,0,0,0.07); }
+.event-card img { width: 100%; height: 130px; object-fit: cover; display: block; }
+.event-card .ec-body { padding: 12px; }
+.event-card .ec-body h3 { font-size: 0.85rem; font-weight: 700; line-height: 1.3; margin-bottom: 6px; }
+.event-card .ec-body .ec-meta { font-size: 0.7rem; color: var(--text-muted); font-family: sans-serif; line-height: 1.6; }
+.event-card .ec-tag { font-size: 0.62rem; font-family: sans-serif; font-weight: 700; text-transform: uppercase;
+  color: white; padding: 2px 8px; border-radius: 20px; display: inline-block; margin-bottom: 6px; }
+.event-card .ec-tag.cultural  { background: var(--culture); }
+.event-card .ec-tag.religious { background: var(--religious); }
+.event-card .ec-tag.business  { background: var(--business); }
+.event-card .ec-tag.education { background: var(--education); }
+.event-card .ec-tag.sports    { background: var(--sports); }
+.event-card .ec-tag.social    { background: var(--social); }
+.free-tag { background: #1a6b3a; color: white; font-size: 0.62rem; font-family: sans-serif;
+  font-weight: 700; padding: 2px 8px; border-radius: 20px; margin-left: 6px; }
+.paid-tag { background: var(--business); color: white; font-size: 0.62rem; font-family: sans-serif;
+  font-weight: 700; padding: 2px 8px; border-radius: 20px; margin-left: 6px; }
+
+/* ── DIVIDER ── */
+.divider { border: none; border-top: 1px solid var(--border); margin: 28px 0; }
+
+/* ── SOCIAL LINKS ── */
+.social-row { display: flex; gap: 10px; flex-wrap: wrap; }
+.social-btn { padding: 7px 14px; border-radius: 6px; font-size: 0.75rem; font-family: sans-serif;
+  font-weight: 700; color: white; display: inline-block; }
+.social-btn.fb { background: #1877f2; }
+.social-btn.ig { background: linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366); }
+.social-btn.yt { background: #ff0000; }
+
+/* ── FOOTER ── */
+footer { background: #1a0a0a; color: #aaa; padding: 24px 32px; margin-top: 48px; }
+footer .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+footer p { font-size: 0.75rem; font-family: sans-serif; }
+footer .updated { color: var(--gold); font-weight: 600; }
+
+/* ── BIRTHDAY BANNER ── */
+.bday-banner { background: linear-gradient(135deg, #c9922a, #e6b85a);
+  border-radius: 8px; padding: 12px 16px; margin-bottom: 14px; }
+.bday-banner h4 { font-size: 0.82rem; font-weight: 800; color: #1a0a0a; margin-bottom: 2px; }
+.bday-banner p { font-size: 0.72rem; color: #3a2200; }
+
+/* ── TOP STORIES CAROUSEL ── */
+.carousel-wrap { position: relative; border-radius: 10px; overflow: hidden;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.13); margin-bottom: 28px; background:#111; }
+.carousel-track { display: flex; transition: transform 0.55s cubic-bezier(.4,0,.2,1); }
+.carousel-slide { min-width: 100%; position: relative; flex-shrink: 0; }
+.carousel-slide img { width: 100%; height: 340px; object-fit: cover; display: block;
+  filter: brightness(0.72); transition: filter 0.4s; }
+.carousel-slide:hover img { filter: brightness(0.82); }
+.carousel-overlay { position: absolute; bottom: 0; left: 0; right: 0;
+  background: linear-gradient(transparent 0%, rgba(0,0,0,0.55) 35%, rgba(0,0,0,0.92) 100%);
+  padding: 48px 28px 20px; color: white; }
+.carousel-overlay .co-badge { margin-bottom: 8px; }
+.carousel-overlay h2 { font-size: 1.45rem; font-weight: 800; line-height: 1.3;
+  margin-bottom: 7px; text-shadow: 0 1px 4px rgba(0,0,0,0.5); }
+.carousel-overlay p { font-size: 0.82rem; opacity: 0.92; line-height: 1.55;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.carousel-meta { display: flex; align-items: center; gap: 12px; margin-top: 10px;
+  font-size: 0.7rem; font-family: sans-serif; opacity: 0.85; }
+.carousel-meta a { color: var(--gold); font-weight: 700; }
+
+/* prev/next buttons */
+.carousel-btn { position: absolute; top: 50%; transform: translateY(-50%);
+  background: rgba(255,255,255,0.15); border: none; color: white; font-size: 1.3rem;
+  width: 40px; height: 40px; border-radius: 50%; cursor: pointer; display: flex;
+  align-items: center; justify-content: center; backdrop-filter: blur(4px);
+  transition: background 0.2s; z-index: 10; }
+.carousel-btn:hover { background: rgba(201,146,42,0.7); }
+.carousel-btn.prev { left: 12px; }
+.carousel-btn.next { right: 12px; }
+
+/* dots */
+.carousel-dots { position: absolute; bottom: 14px; right: 20px;
+  display: flex; gap: 6px; z-index: 10; }
+.carousel-dot { width: 8px; height: 8px; border-radius: 50%;
+  background: rgba(255,255,255,0.4); cursor: pointer; transition: background 0.25s, transform 0.25s; border: none; }
+.carousel-dot.active { background: var(--gold); transform: scale(1.35); }
+
+/* slide counter */
+.carousel-counter { position: absolute; top: 14px; right: 16px; z-index: 10;
+  background: rgba(0,0,0,0.45); color: white; font-size: 0.7rem; font-family: sans-serif;
+  font-weight: 700; padding: 3px 10px; border-radius: 20px; backdrop-filter: blur(4px); }
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="masthead-top">
+    <div class="masthead-logo">
+      <div class="emblem">🐄</div>
+      <div>
+        <h1>YadavHeritage Daily</h1>
+        <p>Hyderabad Yadav Community — News, Events &amp; Heritage</p>
+      </div>
+    </div>
+    <div class="masthead-date" id="headerDate"></div>
+  </div>
+  <nav class="nav-bar">
+    <a href="#latest" class="active">Latest News</a>
+    <a href="#events">Upcoming Events</a>
+    <a href="#sadar">Sadar 2026</a>
+    <a href="#personalities">Personalities</a>
+    <a href="#allnews">All News</a>
+  </nav>
+</div>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-inner" id="tickerInner"></div>
+</div>
+
+<div class="container">
+
+  <!-- ── FEATURED + SIDEBAR ── -->
+  <div style="margin-bottom:8px;margin-top:20px;">
+    <div class="section-head"><h2>🔥 Top Stories</h2><span class="badge featured">Carousel</span></div>
+  </div>
+
+  <div class="grid-main">
+    <div>
+      <!-- Top Stories Carousel -->
+      <div class="carousel-wrap" id="topCarousel">
+        <div class="carousel-track" id="carouselTrack"></div>
+        <button class="carousel-btn prev" id="carouselPrev">&#8249;</button>
+        <button class="carousel-btn next" id="carouselNext">&#8250;</button>
+        <div class="carousel-dots" id="carouselDots"></div>
+        <div class="carousel-counter" id="carouselCounter"></div>
+      </div>
+
+      <!-- Recent 4 news cards -->
+      <div class="section-head" style="margin-top:28px;"><h2>📰 Latest News</h2><span class="count" id="newsCountBadge"></span></div>
+      <div class="news-grid" id="recentNewsGrid"></div>
+
+      <!-- Festival Section -->
+      <div id="sadar" style="margin-top:36px;">
+        <div class="section-head"><h2>🎪 Sadar Utsav 2026</h2><span class="badge festival">State Festival</span></div>
+        <div class="festival-banner">
+          <h2>Sadar Utsav 2026 — 21 October 2026</h2>
+          <p>The iconic Dunnapothula Pandaga (Buffalo Carnival) — now an official Telangana State Festival — promises the grandest edition yet. Preparations are already underway at Narayanguda YMCA, Saidabad, Ameerpet, Khairatabad, Shaikpet, and all 33 districts of Telangana.</p>
+          <div class="fb-meta">
+            <span class="fb-chip">📍 Narayanguda YMCA (Pedha Sadar)</span>
+            <span class="fb-chip">📅 21 Oct 2026 (2nd day after Diwali)</span>
+            <span class="fb-chip">🎺 Yadav Band + Teen Maar</span>
+            <span class="fb-chip">🐃 Buffalo Carnival + Folk Music</span>
+            <span class="fb-chip">🆓 Free Entry</span>
+          </div>
+        </div>
+        <div class="social-row" style="margin-bottom:20px;">
+          <a class="social-btn ig" href="https://www.instagram.com/hyderabad__sadar_/" target="_blank">📷 @hyderabad__sadar_</a>
+          <a class="social-btn ig" href="https://www.instagram.com/telangana_sadar_festival/" target="_blank">📷 @telangana_sadar_festival</a>
+          <a class="social-btn yt" href="https://www.youtube.com/watch?v=DBMqnqHXj9Y" target="_blank">▶ Watch Sadar 2025 on YouTube</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+
+      <!-- Today's birthday -->
+      <div class="sidebar-box" id="birthdayBox" style="display:none;"></div>
+
+      <!-- Upcoming Events -->
+      <div class="sidebar-box" id="upcomingEventsSidebar">
+        <div class="sb-head">📅 Next Events</div>
+        <div class="event-mini" id="eventMiniList"></div>
+      </div>
+
+      <!-- Community Spotlight -->
+      <div class="sidebar-box" id="personalities">
+        <div class="sb-head">⭐ Personalities</div>
+        <div class="person-list" id="personalityList"></div>
+      </div>
+
+      <!-- Social Links -->
+      <div class="sidebar-box">
+        <div class="sb-head">🔗 Follow Us</div>
+        <div class="social-row" style="margin-bottom:10px;">
+          <a class="social-btn fb" href="https://www.facebook.com/AIYYMTSOfficial/" target="_blank">AIYM Telangana</a>
+          <a class="social-btn fb" href="https://www.facebook.com/TelanganaYadavas/photos" target="_blank">Telangana Yadavas</a>
+        </div>
+        <div class="social-row">
+          <a class="social-btn ig" href="https://www.instagram.com/vnaveenyadav/" target="_blank">Naveen Yadav</a>
+          <a class="social-btn ig" href="https://www.instagram.com/hyderabad__sadar_/" target="_blank">Hyderabad Sadar</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ── ALL EVENTS ── -->
+  <div id="events">
+    <div class="section-head"><h2>🗓️ All Upcoming Events</h2><span class="count" id="eventCountBadge"></span></div>
+    <div class="events-full" id="eventsFullGrid"></div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ── ALL NEWS ── -->
+  <div class="all-news-section" id="allnews">
+    <div class="section-head"><h2>📋 All News — Latest to Oldest</h2></div>
+    <div class="all-news-grid" id="allNewsGrid"></div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <p>© 2026 YadavHeritage · Serving the Hyderabad Yadav Community</p>
+    <p class="updated">Last updated: <span id="footerDate"></span></p>
+    <p>Source: Community leaders, news agencies, government announcements</p>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════════════
+     DATA — updated daily by Claude scheduled task
+     ═══════════════════════════════════════════════════ -->
+<script>
+const LAST_UPDATED = "2026-07-17";
+
+// NEWS — sorted newest to oldest by publishedAt
+const NEWS = [
+  {
+    id: 23,
+    title: "TPCC Panel Concludes Conspiracy Behind Shivcharan Reddy–Eshwaramma Yadav Row",
+    excerpt: "A three-member TPCC inquiry committee has concluded that outside interference and conspiracy were behind the row involving Youth Congress chief Jakkidi Shivcharan Reddy and Yadagirigutta Trust member Eshwaramma Yadav, calling the matter 'blown out of proportion'.",
+    category: "politics",
+    publishedAt: "2026-07-17",
+    imageUrl: "https://picsum.photos/id/488/800/500",
+    featured: false,
+    tags: ["TPCC inquiry", "Eshwaramma Yadav", "Shivcharan Reddy", "Congress", "Yadagirigutta"],
+    sourceUrl: "https://www.thehansindia.com/telangana/congress-panel-smells-a-rat-in-reddy-yadav-row-1098018"
+  },
+  {
+    id: 24,
+    title: "Congress BC Leaders Demand Action Over Remarks Against Yadav Community Leader",
+    excerpt: "Telangana Congress BC cell leaders have demanded strong action against Youth Congress president Jakkidi Shivcharan Reddy for his alleged derogatory remarks targeting Yadagirigutta Devasthanam Trust Board member Eshwaramma Yadav.",
+    category: "community",
+    publishedAt: "2026-07-17",
+    imageUrl: "https://picsum.photos/id/522/800/500",
+    featured: false,
+    tags: ["BC leaders", "Eshwaramma Yadav", "Congress", "Yadav dignity", "Telangana"],
+    sourceUrl: "https://telanganatoday.com/congress-bc-leaders-fume-over-youth-congress-president-shivcharan-reddys-remarks-demand-action"
+  },
+  {
+    id: 20,
+    title: "TPCC Probe Into Shivcharan Reddy–Eshwaramma Yadav Rift; AI Audio Clip Alleged",
+    excerpt: "A three-member TPCC inquiry panel is investigating the row between Youth Congress president Jakkidi Shivcharan Reddy and Yadagirigutta Devasthanam Trust Board member Eshwaramma Yadav, with rival group clashes and allegations of AI-fabricated audio at the centre of the controversy.",
+    category: "politics",
+    publishedAt: "2026-07-16",
+    imageUrl: "https://picsum.photos/id/823/800/500",
+    featured: false,
+    tags: ["Eshwaramma Yadav", "Shivcharan Reddy", "TPCC inquiry", "Yadagirigutta", "Congress"],
+    sourceUrl: "https://telanganatoday.com/the-rift-between-shivcharan-reddy-and-eshwaramma-yadavs-groups-fails-to-die-down"
+  },
+  {
+    id: 21,
+    title: "Telangana ePASS Scholarship 2026 Open for OBC Yadav Students — Apply at telanganaepass.cgg.gov.in",
+    excerpt: "The Telangana ePASS Scholarship 2026 is now accepting applications from BC (OBC) students including Yadav youth, covering pre-matric, post-matric, and overseas scholarships through an Aadhaar-linked online portal.",
+    category: "education",
+    publishedAt: "2026-07-16",
+    imageUrl: "https://picsum.photos/id/119/800/500",
+    featured: false,
+    tags: ["ePASS", "scholarship", "OBC", "BC welfare", "Telangana", "education"],
+    sourceUrl: "https://leverageedu.com/discover/indian-scholarships/telangana-epass-scholarship/"
+  },
+  {
+    id: 22,
+    title: "India's T20I Doors Still Open for Star Batter Suryakumar Yadav — Reports",
+    excerpt: "Reports indicate that Suryakumar Yadav remains in consideration for India's T20I squad, keeping hopes alive for fans of the batting maestro who is a celebrated Yadav sports icon.",
+    category: "sports",
+    publishedAt: "2026-07-15",
+    imageUrl: "https://picsum.photos/id/261/800/500",
+    featured: false,
+    tags: ["Suryakumar Yadav", "cricket", "T20I", "India", "sports"],
+    sourceUrl: "https://www.yardbarker.com/cricket/articles/reports_indias_t20i_doors_still_open_for_suryakumar_yadav/s1_17728_44056672"
+  },
+  {
+    id: 15,
+    title: "PM Yashasvi Scholarship 2026: Yadav & OBC Youth Can Apply — Deadline August 31",
+    excerpt: "The PM Yashasvi Scholarship Scheme 2026-27 is open for OBC students including Yadav youth, offering up to ₹1.25 lakh per year. Last date to apply is August 31, 2026.",
+    category: "education",
+    publishedAt: "2026-07-14",
+    imageUrl: "https://picsum.photos/id/20/800/500",
+    featured: false,
+    tags: ["scholarship", "PM Yashasvi", "OBC", "education", "youth"],
+    sourceUrl: "https://scholarships.gov.in"
+  },
+  {
+    id: 17,
+    title: "YSRCP Spokesperson Nagarjuna Yadav Arrested by Hyderabad Police Over TV Remarks",
+    excerpt: "YSRCP spokesperson Nagarjuna Yadav was arrested from Guntur on July 12, 2026, over comments made against Chief Minister Revanth Reddy during a TV debate two years prior.",
+    category: "politics",
+    publishedAt: "2026-07-12",
+    imageUrl: "https://cdn.siasat.com/wp-content/uploads/2026/07/Untitled-design-2026-07-12T180105.099.jpg",
+    featured: false,
+    tags: ["Nagarjuna Yadav", "YSRCP", "arrest", "Hyderabad", "politics"],
+    sourceUrl: "https://www.siasat.com/ysrcp-leader-arrested-from-guntur-over-remarks-on-telangana-cm-3506051/"
+  },
+  {
+    id: 19,
+    title: "Sadar Utsav 2026 Preparations Begin Across Hyderabad — Grandest Edition Expected",
+    excerpt: "Community committees have begun planning for Sadar Utsav 2026, the iconic buffalo carnival now an official Telangana State Festival, expected to draw over a lakh spectators.",
+    category: "culture",
+    publishedAt: "2026-07-10",
+    imageUrl: "https://live.staticflickr.com/3065/2988022629_ec4f8c7f78_z.jpg",
+    featured: true,
+    tags: ["Sadar", "Dunnapothula Pandaga", "Narayanguda", "state festival", "Hyderabad"],
+    sourceUrl: "https://telanganatoday.com"
+  },
+  {
+    id: 18,
+    title: "Doddi Komarayya: The Yadava Shepherd Who Became the First Martyr of Telangana's Peasant Struggle",
+    excerpt: "Doddi Komarayya — a Golla/Yadava shepherd — is gaining renewed recognition as the first martyr of the Telangana peasant armed struggle in state competitive exam curricula.",
+    category: "culture",
+    publishedAt: "2026-07-06",
+    imageUrl: "https://kpiasacademy.com/wp-content/uploads/2026/07/doddi-komarayya.webp",
+    featured: false,
+    tags: ["Doddi Komarayya", "Telangana peasant struggle", "Yadava heritage", "history"],
+    sourceUrl: "https://kpiasacademy.com/doddi-komarayya-telangana/"
+  },
+  {
+    id: 13,
+    title: "Telangana Caste Census: Yadava (Golla) Community 20 Lakh Strong, 3rd Largest BC Group",
+    excerpt: "The Telangana SEEEPC caste census reveals Yadava (Golla) is the third-largest Backward Class community in the state with over 20 lakh people across 6.39 lakh households.",
+    category: "community",
+    publishedAt: "2026-04-20",
+    imageUrl: "https://picsum.photos/id/819/800/500",
+    featured: true,
+    tags: ["caste census", "SEEEPC", "Yadava Golla", "OBC", "Telangana"],
+    sourceUrl: ""
+  },
+  {
+    id: 14,
+    title: "Talasani Srinivas Yadav Leads BRS Agitation for Separate Secunderabad Municipal Corporation",
+    excerpt: "Former Minister Talasani Srinivas Yadav vowed to continue the agitation demanding a separate Secunderabad Municipal Corporation, opposing the Congress government's merger plans.",
+    category: "politics",
+    publishedAt: "2026-01-20",
+    imageUrl: "https://picsum.photos/id/866/800/500",
+    featured: false,
+    tags: ["Talasani Srinivas Yadav", "Secunderabad", "BRS", "agitation"],
+    sourceUrl: ""
+  },
+  {
+    id: 16,
+    title: "Congress's Naveen Yadav Wins Jubilee Hills By-Poll with 25,000 Vote Majority",
+    excerpt: "Vallala Naveen Yadav secured a historic victory in the Jubilee Hills by-election, defeating BRS candidate Maganti Sunitha by over 24,729 votes — a major win for the Yadav community.",
+    category: "politics",
+    publishedAt: "2025-11-14",
+    imageUrl: "https://static.india.com/wp-content/uploads/2025/11/India.com-2025-11-14T152552.347.jpg",
+    featured: true,
+    tags: ["Naveen Yadav", "Jubilee Hills", "by-election", "Congress", "Telangana"],
+    sourceUrl: "https://www.india.com/news/india/jubilee-hills-bypoll-results-2025-naveen-yadav-secures-big-win-for-congress-in-telangana-8184120/"
+  },
+  {
+    id: 10,
+    title: "Sadar Utsav Declared Telangana State Festival — Grand Celebrations Held Across Hyderabad",
+    excerpt: "The Telangana Congress government declared Sadar Sammelan a State Festival. The 2025 edition drew massive crowds at Narayanguda, Saidabad, Ameerpet, and Khairatabad.",
+    category: "culture",
+    publishedAt: "2025-10-20",
+    imageUrl: "https://picsum.photos/id/680/800/500",
+    featured: true,
+    tags: ["Sadar", "state festival", "buffalo carnival", "Dunnapothula", "culture"],
+    sourceUrl: ""
+  },
+  {
+    id: 12,
+    title: "CM Revanth Reddy Attends Sadar Sammelan, Pledges Political Opportunities for Yadav Community",
+    excerpt: "Telangana CM A. Revanth Reddy participated in the Sri Krishna Sadar Sammelan and promised the Yadav community political representation and full government support.",
+    category: "politics",
+    publishedAt: "2025-10-19",
+    imageUrl: "https://picsum.photos/id/763/800/500",
+    featured: true,
+    tags: ["Revanth Reddy", "Sadar Sammelan", "political promise", "welfare"],
+    sourceUrl: ""
+  },
+  {
+    id: 11,
+    title: "Minister Srinivas Yadav Chairs Meeting on Golla & Kuruma Community Bhavans",
+    excerpt: "Telangana Minister Talasani Srinivas Yadav convened a meeting on constructing dedicated community halls for the Golla and Kuruma communities across Telangana.",
+    category: "community",
+    publishedAt: "2025-09-10",
+    imageUrl: "https://picsum.photos/id/725/800/500",
+    featured: false,
+    tags: ["Golla Kuruma", "Bhavan", "Srinivas Yadav", "welfare"],
+    sourceUrl: ""
+  },
+  {
+    id: 7,
+    title: "Akhila Bharatha Yadav Mahasabha National Rally Enters Telangana",
+    excerpt: "The pan-India rally reached Hyderabad demanding a dedicated Yadav Regiment in the Indian Army and felicitating outstanding community members across the state.",
+    category: "community",
+    publishedAt: "2025-08-16",
+    imageUrl: "https://picsum.photos/id/509/800/500",
+    featured: true,
+    tags: ["mahasabha", "rally", "army", "Yadav regiment", "national"],
+    sourceUrl: ""
+  },
+  {
+    id: 9,
+    title: "Telangana Caste Survey: Yadavas Among Key OBC Communities; State Passes 42% Reservation Bill",
+    excerpt: "CM Revanth Reddy unveiled the landmark socio-economic caste survey. Yadavas are identified as one of four major vulnerable communities, and the state passed a 42% OBC reservation bill.",
+    category: "politics",
+    publishedAt: "2025-07-25",
+    imageUrl: "https://picsum.photos/id/633/800/500",
+    featured: true,
+    tags: ["caste survey", "OBC", "reservation", "Revanth Reddy", "Telangana"],
+    sourceUrl: ""
+  },
+  {
+    id: 8,
+    title: "Yadava & Golla Kuruma Communities Stage Protest at Gandhi Bhavan, Demand Cabinet Berth",
+    excerpt: "Community members gathered at Gandhi Bhavan in Hyderabad, demanding a ministerial post and a Rs 5,000 crore welfare fund from the Telangana Congress government.",
+    category: "politics",
+    publishedAt: "2025-06-23",
+    imageUrl: "https://picsum.photos/id/575/800/500",
+    featured: false,
+    tags: ["protest", "politics", "cabinet", "Golla Kuruma", "welfare"],
+    sourceUrl: ""
+  },
+  {
+    id: 1,
+    title: "Yadav Community Welfare Trust Announces ₹2 Crore Scholarship Fund",
+    excerpt: "The Trust has committed ₹2 crore to support higher education for 200 deserving students annually, covering engineering, medical, and law courses at premier institutions.",
+    category: "education",
+    publishedAt: "2025-06-15",
+    imageUrl: "https://picsum.photos/id/160/800/500",
+    featured: true,
+    tags: ["scholarship", "education", "welfare", "youth"],
+    sourceUrl: ""
+  },
+  {
+    id: 2,
+    title: "Krishna Janmashtami 2025: Record 60,000 Devotees Expected at Jubilee Hills Temple",
+    excerpt: "The grand Janmashtami Mahotsav at Sri Krishna Mandir is set to be the largest in the temple's 40-year history, with cultural programs spanning three days.",
+    category: "culture",
+    publishedAt: "2025-06-10",
+    imageUrl: "https://picsum.photos/id/217/800/500",
+    featured: true,
+    tags: ["janmashtami", "festival", "krishna", "temple"],
+    sourceUrl: ""
+  },
+  {
+    id: 3,
+    title: "Hyderabad Yadav Mahasabha Elects New Executive Committee",
+    excerpt: "In a historic election conducted across 24 mandals, the new executive committee was sworn in with a renewed vision for community development.",
+    category: "community",
+    publishedAt: "2025-05-28",
+    imageUrl: "https://picsum.photos/id/274/800/500",
+    featured: false,
+    tags: ["mahasabha", "elections", "leadership", "community"],
+    sourceUrl: ""
+  },
+  {
+    id: 4,
+    title: "400+ Entrepreneurs Shine at Yadav Business Expo 2025",
+    excerpt: "The annual Business Expo at HICC drew record participation with entrepreneurs from dairy, IT, construction, and FMCG sectors showcasing innovations and forming new partnerships.",
+    category: "business",
+    publishedAt: "2025-05-12",
+    imageUrl: "https://picsum.photos/id/335/800/500",
+    featured: false,
+    tags: ["business", "expo", "entrepreneurship", "HICC"],
+    sourceUrl: ""
+  },
+  {
+    id: 5,
+    title: "Community Hospital Initiative: Free Health Camps Serve 10,000 in Secunderabad",
+    excerpt: "The Yadav Community Health Foundation conducted free medical camps across 12 locations, providing diagnostics, medicines, and specialist consultations at no cost.",
+    category: "community",
+    publishedAt: "2025-04-30",
+    imageUrl: "https://picsum.photos/id/390/800/500",
+    featured: false,
+    tags: ["health", "welfare", "community service"],
+    sourceUrl: ""
+  },
+  {
+    id: 6,
+    title: "First Yadav Youth Leadership Summit Concludes at HITEC City",
+    excerpt: "Over 500 young professionals and students gathered for a two-day summit focused on leadership, technology careers, and community responsibility.",
+    category: "education",
+    publishedAt: "2025-04-18",
+    imageUrl: "https://picsum.photos/id/430/800/500",
+    featured: true,
+    tags: ["youth", "leadership", "summit", "careers"],
+    sourceUrl: ""
+  }
+];
+
+// EVENTS — upcoming only, sorted by date soonest first
+const EVENTS = [
+  {
+    id: 11,
+    title: "Janmashtami Mahotsav 2026",
+    description: "Annual grand celebration of Sri Krishna's birth anniversary at Sri Krishna Mandir, Jubilee Hills — three days of devotion, classical performances, and community spirit.",
+    date: "2026-08-02",
+    endDate: "2026-08-04",
+    time: "6:00 PM onwards (Midnight Abhishekam)",
+    venue: "Sri Krishna Mandir, Jubilee Hills",
+    category: "religious",
+    imageUrl: "https://picsum.photos/id/903/800/500",
+    organizer: "Sri Krishna Mandir Trust & Hyderabad Yadav Mahasabha",
+    isFree: true,
+    isFeatured: true
+  },
+  {
+    id: 10,
+    title: "Yadav Community Jan Sabha — Telangana Assembly Election 2026",
+    description: "Community leaders from across Telangana gather to discuss Yadav interests ahead of the 2026 Assembly Elections and mobilise the community's 28 lakh voters.",
+    date: "2026-08-10",
+    time: "11:00 AM – 5:00 PM",
+    venue: "Ambedkar Auditorium, Tank Bund, Hyderabad",
+    category: "social",
+    imageUrl: "https://picsum.photos/id/846/800/500",
+    organizer: "Hyderabad Yadav Mahasabha",
+    isFree: true,
+    isFeatured: true
+  },
+  {
+    id: 13,
+    title: "Free Health & Wellness Camp — Yadav Community",
+    description: "Free community health camp with consultations, blood tests, ECG, eye check-ups, and medicines for Yadav community members and their families.",
+    date: "2026-08-23",
+    time: "8:00 AM – 4:00 PM",
+    venue: "YMCA Grounds, Narayanguda, Hyderabad",
+    category: "social",
+    imageUrl: "https://picsum.photos/id/180/800/500",
+    organizer: "Yadav Community Health Foundation",
+    isFree: true,
+    isFeatured: false
+  },
+  {
+    id: 9,
+    title: "Akhila Bharatha Yadav Mahasabha — Telangana Grand Sammelan 2026",
+    description: "Annual grand sammelan: Yadav Regiment demand, OBC reservation advocacy, and 2026 Telangana Assembly Election preparations.",
+    date: "2026-09-14",
+    time: "10:00 AM – 7:00 PM",
+    venue: "L.B. Stadium, Basheerbagh, Hyderabad",
+    category: "social",
+    imageUrl: "https://picsum.photos/id/797/800/500",
+    organizer: "Akhila Bharatha Yadav Mahasabha — Telangana",
+    isFree: true,
+    isFeatured: true
+  },
+  {
+    id: 14,
+    title: "Inter-Mandal Yadav Youth Cricket Tournament 2026",
+    description: "Cricket tournament for Yadav youth aged 16–25, featuring 16 teams from Hyderabad mandals in a knockout format with trophies and prizes.",
+    date: "2026-09-19",
+    endDate: "2026-09-21",
+    time: "7:00 AM – 6:00 PM",
+    venue: "Gymkhana Grounds, Secunderabad",
+    category: "sports",
+    imageUrl: "https://picsum.photos/id/257/800/500",
+    organizer: "Yadav Sports Club, Hyderabad",
+    isFree: false,
+    isFeatured: false
+  },
+  {
+    id: 12,
+    title: "Foundation Stone Laying — Golla & Kuruma Community Bhavan",
+    description: "A historic milestone: the foundation stone for a dedicated Golla & Kuruma (Yadava) community hall in Hyderabad.",
+    date: "2026-10-02",
+    time: "10:00 AM – 12:00 PM",
+    venue: "Hyderabad — location TBA",
+    category: "social",
+    imageUrl: "https://picsum.photos/id/955/800/500",
+    organizer: "Telangana State Government & Golla Kuruma Community Association",
+    isFree: true,
+    isFeatured: false
+  },
+  {
+    id: 15,
+    title: "Annual Scholarship Felicitation Ceremony 2026",
+    description: "The Yadav Community Welfare Trust honours meritorious students with scholarships across engineering, medical, law and arts disciplines.",
+    date: "2026-10-18",
+    time: "10:00 AM – 1:00 PM",
+    venue: "Shilpakala Vedika, Banjara Hills, Hyderabad",
+    category: "education",
+    imageUrl: "https://picsum.photos/id/376/800/500",
+    organizer: "Yadav Community Welfare Trust",
+    isFree: true,
+    isFeatured: false
+  },
+  {
+    id: 8,
+    title: "Sadar Utsav 2026 — Telangana State Festival",
+    description: "The iconic Dunnapothula Pandaga (Buffalo Carnival) celebrated across Hyderabad and all 33 districts of Telangana. Now an official Telangana State Festival.",
+    date: "2026-10-21",
+    time: "From dawn — processions through the day",
+    venue: "Narayanguda YMCA & across Hyderabad",
+    category: "cultural",
+    imageUrl: "https://live.staticflickr.com/3065/2988022629_ec4f8c7f78_z.jpg",
+    organizer: "Hyderabad Yadav Mahasabha & Telangana State Government",
+    isFree: true,
+    isFeatured: true
+  },
+  {
+    id: 17,
+    title: "Yadav Business Forum & Trade Fair — Hyderabad 2026",
+    description: "Two-day forum connecting Yadav entrepreneurs, dairy farmers, and SME owners with investors, government officials, and market linkages.",
+    date: "2026-11-07",
+    endDate: "2026-11-08",
+    time: "9:00 AM – 6:00 PM",
+    venue: "Hyderabad International Convention Centre (HICC)",
+    category: "business",
+    imageUrl: "https://picsum.photos/id/567/800/500",
+    organizer: "Yadav Business Federation & Hyderabad Yadav Mahasabha",
+    isFree: false,
+    isFeatured: true
+  },
+  {
+    id: 16,
+    title: "Gita Jayanti Celebration 2026",
+    description: "Spiritual gathering to mark the sacred day of the Bhagavad Gita with mass recitations, discourses, and devotional music. All are welcome.",
+    date: "2026-12-21",
+    time: "7:00 AM – 9:00 PM",
+    venue: "NTR Stadium, Hyderabad",
+    category: "religious",
+    imageUrl: "https://picsum.photos/id/488/800/500",
+    organizer: "Hyderabad Yadav Spiritual Foundation",
+    isFree: true,
+    isFeatured: false
+  }
+];
+
+// PERSONALITIES — Famous Yadav community figures
+const PERSONALITIES = [
+  {
+    name: "Naveen Yadav",
+    role: "MLA, Jubilee Hills (Congress) — Telangana",
+    birthday: "1985-03-15",
+    emoji: "🏛️",
+    note: "Won 2025 by-election with 25,000 majority",
+    instagram: "https://www.instagram.com/vnaveenyadav/"
+  },
+  {
+    name: "Talasani Srinivas Yadav",
+    role: "Former Minister, BRS — Sanathnagar, Hyderabad",
+    birthday: "1965-07-18",
+    emoji: "⚖️",
+    note: "Key Yadav political voice in Telangana",
+    instagram: ""
+  },
+  {
+    name: "Akhilesh Yadav",
+    role: "President, Samajwadi Party; Former UP CM",
+    birthday: "1973-07-01",
+    emoji: "🌾",
+    note: "National Yadav political leader",
+    instagram: ""
+  },
+  {
+    name: "Lalu Prasad Yadav",
+    role: "Founder, RJD; Former Bihar CM",
+    birthday: "1948-06-11",
+    emoji: "🐄",
+    note: "Pioneer of OBC political mobilisation in India",
+    instagram: ""
+  },
+  {
+    name: "Mulayam Singh Yadav",
+    role: "Founder, Samajwadi Party; Former UP CM",
+    birthday: "1939-11-22",
+    emoji: "🎖️",
+    note: "Legacy: Champion of OBC rights and social justice",
+    instagram: ""
+  },
+  {
+    name: "Doddi Komarayya",
+    role: "First Martyr of Telangana Peasant Struggle",
+    birthday: "",
+    emoji: "🕊️",
+    note: "Golla/Yadava shepherd who sacrificed his life for peasant rights (1940s)",
+    instagram: ""
+  }
+];
+
+// ─── RENDER FUNCTIONS ───────────────────────────────────
+
+function formatDate(dateStr) {
+  if (!dateStr) return "";
+  const d = new Date(dateStr + "T00:00:00");
+  return d.toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" });
+}
+
+function formatDateShort(dateStr) {
+  if (!dateStr) return { day: "—", mon: "—" };
+  const d = new Date(dateStr + "T00:00:00");
+  return {
+    day: d.getDate(),
+    mon: d.toLocaleDateString("en-IN", { month: "short" })
+  };
+}
+
+function categoryColor(cat) {
+  const map = {
+    politics: "#1a3a8b", culture: "#8B1A1A", education: "#1a6b3a",
+    community: "#7a3a10", business: "#2a2a6b", sports: "#0d6b6b"
+  };
+  return map[cat] || "#555";
+}
+
+function renderBadge(cat) {
+  return `<span class="badge ${cat}">${cat}</span>`;
+}
+
+function isTodayBirthday(birthday) {
+  if (!birthday) return false;
+  const today = new Date();
+  const [, m, d] = birthday.split("-").map(Number);
+  return m === today.getMonth() + 1 && d === today.getDate();
+}
+
+// Set dates
+const now = new Date();
+document.getElementById("headerDate").innerHTML =
+  `<strong>${now.toLocaleDateString("en-IN", { weekday: "long", day: "numeric", month: "long", year: "numeric" })}</strong><br>
+   Hyderabad, Telangana &nbsp;·&nbsp; Yadav Community Edition`;
+document.getElementById("footerDate").textContent = new Date(LAST_UPDATED).toLocaleDateString("en-IN", { day: "numeric", month: "long", year: "numeric" });
+
+// Ticker
+const tickerItems = NEWS.slice(0, 8).map(n => `<span>${n.title}</span>`).join("");
+document.getElementById("tickerInner").innerHTML = tickerItems + tickerItems; // duplicate for loop
+
+// Birthday box
+const todayBdays = PERSONALITIES.filter(p => isTodayBirthday(p.birthday));
+if (todayBdays.length > 0) {
+  const box = document.getElementById("birthdayBox");
+  box.style.display = "";
+  box.innerHTML = `<div class="sb-head">🎂 Today's Birthdays</div>` +
+    todayBdays.map(p => `
+      <div class="bday-banner">
+        <h4>${p.emoji} ${p.name}</h4>
+        <p>${p.role}</p>
+      </div>`).join("");
+}
+
+// ── TOP STORIES CAROUSEL ─────────────────────────────────────────────
+const carouselNews = NEWS.slice(0, 5);
+let carouselIdx = 0, carouselTimer = null;
+
+function carouselGo(idx) {
+  carouselIdx = (idx + carouselNews.length) % carouselNews.length;
+  document.getElementById("carouselTrack").style.transform = `translateX(-${carouselIdx * 100}%)`;
+  document.querySelectorAll(".carousel-dot").forEach((d, i) =>
+    d.classList.toggle("active", i === carouselIdx));
+  document.getElementById("carouselCounter").textContent = `${carouselIdx + 1} / ${carouselNews.length}`;
+}
+
+function carouselAutoplay() {
+  clearInterval(carouselTimer);
+  carouselTimer = setInterval(() => carouselGo(carouselIdx + 1), 5500);
+}
+
+// Build slides
+document.getElementById("carouselTrack").innerHTML = carouselNews.map(n => `
+  <div class="carousel-slide">
+    <img src="${n.imageUrl}" alt="${n.title}" onerror="this.src='https://picsum.photos/800/340'">
+    <div class="carousel-overlay">
+      <div class="co-badge">${renderBadge(n.category)}</div>
+      <h2>${n.title}</h2>
+      <p>${n.excerpt}</p>
+      <div class="carousel-meta">
+        <span>📅 ${formatDate(n.publishedAt)}</span>
+        ${n.sourceUrl ? `<a href="${n.sourceUrl}" target="_blank">Read Source ↗</a>` : ""}
+      </div>
+    </div>
+  </div>`).join("");
+
+// Build dots
+document.getElementById("carouselDots").innerHTML = carouselNews.map((_, i) =>
+  `<button class="carousel-dot${i === 0 ? " active" : ""}" onclick="carouselGo(${i});carouselAutoplay()"></button>`
+).join("");
+
+document.getElementById("carouselPrev").onclick = () => { carouselGo(carouselIdx - 1); carouselAutoplay(); };
+document.getElementById("carouselNext").onclick = () => { carouselGo(carouselIdx + 1); carouselAutoplay(); };
+
+// Touch swipe support
+let cTouchX = 0;
+const cWrap = document.getElementById("topCarousel");
+cWrap.addEventListener("touchstart", e => { cTouchX = e.touches[0].clientX; }, { passive: true });
+cWrap.addEventListener("touchend", e => {
+  const dx = e.changedTouches[0].clientX - cTouchX;
+  if (Math.abs(dx) > 40) { carouselGo(carouselIdx + (dx < 0 ? 1 : -1)); carouselAutoplay(); }
+}, { passive: true });
+
+carouselGo(0);
+carouselAutoplay();
+
+// For the "recent news" section, use the featuredNews concept = first item
+const featuredNews = carouselNews[0];
+
+// News count
+document.getElementById("newsCountBadge").textContent = NEWS.length + " stories";
+document.getElementById("eventCountBadge").textContent = EVENTS.length + " events";
+
+// Recent 4 news cards (skip the featured one)
+const recentNews = NEWS.filter(n => n.id !== featuredNews.id).slice(0, 4);
+document.getElementById("recentNewsGrid").innerHTML = recentNews.map(n => `
+  <div class="news-card">
+    <div class="nc-img">
+      <img src="${n.imageUrl}" alt="${n.title}" onerror="this.src='https://picsum.photos/400/160'">
+    </div>
+    <div class="nc-body">
+      ${renderBadge(n.category)}
+      <h3 style="margin-top:6px">${n.title}</h3>
+      <p>${n.excerpt.substring(0, 100)}…</p>
+      <div class="nc-footer">
+        <span class="meta-date">${formatDate(n.publishedAt)}</span>
+        ${n.sourceUrl ? `<a href="${n.sourceUrl}" target="_blank" style="font-size:0.7rem;font-family:sans-serif;color:var(--red);">Source ↗</a>` : ""}
+      </div>
+    </div>
+  </div>`).join("");
+
+// Sidebar events (next 5)
+document.getElementById("eventMiniList").innerHTML = EVENTS.slice(0, 6).map(e => {
+  const dt = formatDateShort(e.date);
+  return `
+    <div class="event-item">
+      <div class="ev-date"><div class="eday">${dt.day}</div><div class="emon">${dt.mon}</div></div>
+      <div class="ev-info">
+        <h4>${e.title}</h4>
+        <p>📍 ${e.venue.split(",")[0]}</p>
+        <p>${e.isFree ? "🆓 Free" : "🎟️ Paid"}</p>
+      </div>
+    </div>`;
+}).join("");
+
+// Personality list
+document.getElementById("personalityList").innerHTML = PERSONALITIES.map(p => `
+  <div class="person-item">
+    <div class="pav">${p.emoji}</div>
+    <div class="pinfo">
+      <h4>${p.instagram ? `<a href="${p.instagram}" target="_blank">${p.name}</a>` : p.name}</h4>
+      <p>${p.role}</p>
+      <p style="font-size:0.68rem;color:#666;margin-top:2px;">${p.note}</p>
+      ${p.birthday ? `<div class="bday">🎂 ${new Date(p.birthday + "T00:00:00").toLocaleDateString("en-IN",{day:"numeric",month:"long"})}</div>` : ""}
+    </div>
+  </div>`).join("");
+
+// Full events grid
+document.getElementById("eventsFullGrid").innerHTML = EVENTS.map(e => `
+  <div class="event-card">
+    <img src="${e.imageUrl}" alt="${e.title}" onerror="this.src='https://picsum.photos/400/130'">
+    <div class="ec-body">
+      <span class="ec-tag ${e.category}">${e.category}</span>
+      ${e.isFree ? '<span class="free-tag">Free</span>' : '<span class="paid-tag">Paid</span>'}
+      <h3 style="margin-top:8px">${e.title}</h3>
+      <div class="ec-meta">
+        📅 ${formatDate(e.date)}${e.endDate ? " – " + formatDate(e.endDate) : ""}<br>
+        🕐 ${e.time}<br>
+        📍 ${e.venue}<br>
+        👤 ${e.organizer}
+      </div>
+    </div>
+  </div>`).join("");
+
+// All news grid (newest to oldest, all items)
+document.getElementById("allNewsGrid").innerHTML = NEWS.map(n => `
+  <div class="news-card">
+    <div class="nc-img">
+      <img src="${n.imageUrl}" alt="${n.title}" onerror="this.src='https://picsum.photos/400/160'">
+    </div>
+    <div class="nc-body">
+      ${renderBadge(n.category)}
+      <h3 style="margin-top:6px">${n.title}</h3>
+      <p style="font-size:0.75rem;color:var(--text-muted);">${n.excerpt.substring(0, 120)}…</p>
+      <div class="nc-footer" style="margin-top:8px;">
+        <span class="meta-date">${formatDate(n.publishedAt)}</span>
+        ${n.tags.slice(0,2).map(t=>`<span style="font-size:0.62rem;background:#eee;padding:2px 7px;border-radius:20px;font-family:sans-serif;">#${t}</span>`).join(" ")}
+      </div>
+    </div>
+  </div>`).join("");
+</script>
+</body>
+</html>

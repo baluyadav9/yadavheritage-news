@@ -1,0 +1,155 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  darkMode: 'class',
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  theme: {
+    extend: {
+      colors: {
+        gold: {
+          50:  '#FDF6E8',
+          100: '#FAE9C6',
+          200: '#F5D48D',
+          300: '#EEBE54',
+          400: '#E5B24A',
+          500: '#C8922A',
+          600: '#A67522',
+          700: '#845B1A',
+          800: '#624312',
+          900: '#402C0C',
+        },
+        peacock: {
+          50:  '#E6F4F1',
+          100: '#C2E5DE',
+          200: '#85CBBC',
+          300: '#48B19A',
+          400: '#2A9480',
+          500: '#1E6B5C',
+          600: '#185648',
+          700: '#124034',
+          800: '#0C2B22',
+          900: '#061511',
+        },
+        saffron: {
+          50:  '#FEF2E8',
+          100: '#FDDEC6',
+          200: '#FBBD8D',
+          300: '#F89C54',
+          400: '#E88A4A',
+          500: '#E07B39',
+          600: '#B85F25',
+          700: '#90471B',
+          800: '#683211',
+          900: '#401E0A',
+        },
+        ink: {
+          50:  '#EDEBF4',
+          100: '#D4CFE8',
+          200: '#A899D1',
+          300: '#7C63B9',
+          400: '#5C42A8',
+          500: '#3B2D8C',
+          600: '#2E2270',
+          700: '#221854',
+          800: '#1C1628',
+          900: '#110E1A',
+        },
+        cream: {
+          50:  '#FEFDF9',
+          100: '#FDF9F1',
+          200: '#FAF6EE',
+          300: '#F5EDD8',
+          400: '#EDE0BE',
+          500: '#E5D3A4',
+          600: '#D4B87A',
+          700: '#B89250',
+          800: '#8C6C30',
+          900: '#604A1E',
+        },
+        lotus: {
+          50:  '#FEF0F7',
+          100: '#FCDAEE',
+          200: '#F9B5DD',
+          300: '#F48FC9',
+          400: '#EE6AB5',
+          500: '#D94499',
+          600: '#B53380',
+          700: '#8F2465',
+          800: '#68174A',
+          900: '#420A2F',
+        },
+        krishna: {
+          50:  '#EEF3FC',
+          100: '#CDDAF7',
+          200: '#9BB5EF',
+          300: '#6990E7',
+          400: '#3A6BD6',
+          500: '#1E50C0',
+          600: '#173E9A',
+          700: '#112D74',
+          800: '#0C1E50',
+          900: '#060F2A',
+        },
+      },
+      fontFamily: {
+        display: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+        body: ['"Inter"', 'system-ui', 'sans-serif'],
+      },
+      animation: {
+        'float': 'float 8s ease-in-out infinite',
+        'spin-slow': 'spin 20s linear infinite',
+        'fade-up': 'fadeUp 0.6s ease-out',
+        'shimmer': 'shimmer 2.5s linear infinite',
+        'pulse-gold': 'pulseGold 2s ease-in-out infinite',
+        'flicker-diya': 'flickerDiya 3s ease-in-out infinite',
+        'bloom': 'bloom 1.2s ease-out forwards',
+      },
+      keyframes: {
+        float: {
+          '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+          '33%': { transform: 'translateY(-18px) rotate(1deg)' },
+          '66%': { transform: 'translateY(-8px) rotate(-1deg)' },
+        },
+        fadeUp: {
+          '0%': { opacity: '0', transform: 'translateY(24px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        shimmer: {
+          '0%': { backgroundPosition: '-200% center' },
+          '100%': { backgroundPosition: '200% center' },
+        },
+        pulseGold: {
+          '0%, 100%': { boxShadow: '0 0 0 0 rgba(200, 146, 42, 0.4)' },
+          '50%': { boxShadow: '0 0 0 12px rgba(200, 146, 42, 0)' },
+        },
+        flickerDiya: {
+          '0%, 100%': { opacity: '1', transform: 'scale(1)' },
+          '25%': { opacity: '0.88', transform: 'scale(0.97)' },
+          '50%': { opacity: '0.95', transform: 'scale(1.02)' },
+          '75%': { opacity: '0.92', transform: 'scale(0.98)' },
+        },
+        bloom: {
+          '0%': { transform: 'scale(0.6) rotate(-15deg)', opacity: '0' },
+          '100%': { transform: 'scale(1) rotate(0deg)', opacity: '1' },
+        },
+      },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+      },
+      boxShadow: {
+        'gold': '0 4px 24px -4px rgba(200, 146, 42, 0.35)',
+        'gold-lg': '0 8px 40px -8px rgba(200, 146, 42, 0.45)',
+        'ink': '0 4px 24px -4px rgba(17, 14, 26, 0.5)',
+        'ink-lg': '0 12px 48px -8px rgba(17, 14, 26, 0.6)',
+        'glass': '0 8px 32px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.1)',
+      },
+      typography: {
+        DEFAULT: {
+          css: {
+            fontFamily: '"Inter", system-ui, sans-serif',
+          }
+        }
+      }
+    },
+  },
+  plugins: [],
+}

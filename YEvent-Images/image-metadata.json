@@ -1,0 +1,229 @@
+{
+  "generated": "2026-07-16",
+  "project": "YadavHeritage Website",
+  "description": "Image and media assets for news articles (IDs 16-19) and events (IDs 15-17) added in July 2026 weekly update",
+  "news_articles": [
+    {
+      "id": 16,
+      "slug": "naveen-yadav-jubilee-hills-bypoll-win-2025",
+      "title": "Congress's Naveen Yadav Wins Jubilee Hills By-Poll with 25,000 Vote Majority",
+      "published": "2025-11-14",
+      "category": "politics",
+      "primary_image": {
+        "url": "https://static.india.com/wp-content/uploads/2025/11/India.com-2025-11-14T152552.347.jpg",
+        "source": "India.com",
+        "format": "jpg",
+        "license": "All rights reserved — India.com",
+        "suggested_filename": "news16-naveen-yadav-jubilee-hills.jpg"
+      },
+      "social_media": {
+        "instagram": "https://www.instagram.com/vnaveenyadav/",
+        "facebook_photos": "https://www.facebook.com/PingNaveenYadav/photos/",
+        "note": "Official personal accounts of Naveen Yadav MLA — contain event and victory photos"
+      },
+      "source_articles": [
+        {
+          "title": "Jubilee Hills Bypoll Results 2025: Naveen Yadav secures BIG win for Congress in Telangana",
+          "url": "https://www.india.com/news/india/jubilee-hills-bypoll-results-2025-naveen-yadav-secures-big-win-for-congress-in-telangana-8184120/",
+          "publication": "India.com",
+          "date": "2025-11-14"
+        },
+        {
+          "title": "Congress Wins Jubilee Hills By-Election: Naveen Yadav Secures 25,000 Majority",
+          "url": "https://www.telanganatribune.com/congress-wins-jubilee-hills-by-election-naveen-yadav-secures-25000-majority/",
+          "publication": "Telangana Tribune",
+          "date": "2025-11-14"
+        },
+        {
+          "title": "Naveen Yadav Sworn in as Jubilee Hills MLA",
+          "url": "https://www.deccanchronicle.com/southern-states/telangana/naveen-yadav-sworn-in-as-jubilee-hills-mla-1919676",
+          "publication": "Deccan Chronicle",
+          "date": "2025-11-26"
+        },
+        {
+          "title": "Wikipedia: Naveen Yadav",
+          "url": "https://en.wikipedia.org/wiki/Naveen_Yadav",
+          "publication": "Wikipedia"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "slug": "nagarjuna-yadav-ysrcp-arrested-hyderabad-july-2026",
+      "title": "YSRCP Spokesperson Nagarjuna Yadav Arrested by Hyderabad Police Over TV Remarks",
+      "published": "2026-07-12",
+      "category": "politics",
+      "primary_image": {
+        "url": "https://cdn.siasat.com/wp-content/uploads/2026/07/Untitled-design-2026-07-12T180105.099.jpg",
+        "source": "The Siasat Daily",
+        "format": "jpg",
+        "license": "All rights reserved — The Siasat Daily",
+        "caption": "YSR Congress Party spokesperson Nagarjuna Yadav and Sakshi TV anchor Kommineni Srinivas Rao",
+        "suggested_filename": "news17-nagarjuna-yadav-arrest.jpg"
+      },
+      "videos": [
+        {
+          "title": "YCP Nagarjuna Yadav Arrest Visuals | Controversial Comments On CM Revanth Reddy",
+          "url": "https://www.youtube.com/watch?v=ZqbpKyxiiZ8",
+          "channel": "TV5 News",
+          "type": "YouTube"
+        }
+      ],
+      "source_articles": [
+        {
+          "title": "YSRCP leader arrested from Guntur over remarks on Telangana CM",
+          "url": "https://www.siasat.com/ysrcp-leader-arrested-from-guntur-over-remarks-on-telangana-cm-3506051/",
+          "publication": "The Siasat Daily",
+          "date": "2026-07-12"
+        },
+        {
+          "title": "YSRCP spokesperson Nagarjuna Yadav arrested over remarks on Telangana CM in two-year-old TV debate",
+          "url": "https://thesouthfirst.com/telangana/ysrcp-spokesperson-nagarjuna-yadav-arrested-over-remarks-on-telangana-cm-in-two-year-old-tv-debate/",
+          "publication": "The South First",
+          "date": "2026-07-12"
+        },
+        {
+          "title": "Telangana Police Arrest YSRC Leader In Guntur For Remarks Against Revanth Reddy",
+          "url": "https://www.deccanchronicle.com/southern-states/andhra-pradesh/telangana-police-arrest-ysrc-leader-in-guntur-for-remarks-against-revanth-reddy-1970444",
+          "publication": "Deccan Chronicle",
+          "date": "2026-07-12"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "slug": "doddi-komarayya-first-martyr-telangana-peasant-struggle-yadava",
+      "title": "Doddi Komarayya: The Yadava Shepherd Who Became the First Martyr of Telangana Peasant Struggle",
+      "published": "2026-07-06",
+      "category": "culture",
+      "primary_image": {
+        "url": "https://kpiasacademy.com/wp-content/uploads/2026/07/doddi-komarayya.webp",
+        "source": "KPIAS Academy",
+        "format": "webp",
+        "license": "Educational use — KPIAS Academy",
+        "caption": "Doddi Komarayya — First Martyr of the Telangana Peasant Armed Struggle",
+        "suggested_filename": "news18-doddi-komarayya.webp"
+      },
+      "videos": [
+        {
+          "title": "Doddi Komaraiah | First Martyr of Telangana armed Struggle",
+          "url": "https://www.youtube.com/watch?v=h7IpUSAG32s",
+          "channel": "MicTv Telugu",
+          "type": "YouTube"
+        }
+      ],
+      "source_articles": [
+        {
+          "title": "Doddi Komarayya: First Martyr of Telangana Peasant Struggle",
+          "url": "https://kpiasacademy.com/doddi-komarayya-telangana/",
+          "publication": "KPIAS Academy",
+          "date": "2026-07-06"
+        },
+        {
+          "title": "Remembering Doddi Komaraiah on his 80th death anniversary",
+          "url": "https://www.deccanchronicle.com/southern-states/telangana/remembering-doddi-komaraiah-on-his-80th-death-anniversary-the-first-martyr-of-the-telangana-armed-struggle-1968325",
+          "publication": "Deccan Chronicle",
+          "date": "2026-07-04"
+        },
+        {
+          "title": "Telangana and Martyrdom of Doddi Komarayya",
+          "url": "https://countercurrents.org/2019/07/telangana-and-martyrdom-of-doddi-komarayya/",
+          "publication": "Countercurrents"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "slug": "sadar-utsav-2026-preparations-underway-hyderabad",
+      "title": "Sadar Utsav 2026 Preparations Begin Across Hyderabad — Grandest Edition Expected",
+      "published": "2026-07-10",
+      "category": "culture",
+      "primary_image": {
+        "url": "https://live.staticflickr.com/3065/2988022629_ec4f8c7f78_z.jpg",
+        "source": "Flickr — Vijay Bandari",
+        "format": "jpg",
+        "license": "CC BY-NC-ND 2.0 — ATTRIBUTION REQUIRED: Vijay Bandari / Flickr",
+        "caption": "Sadar Festival Hyderabad — Buffalo carnival at Narayanguda",
+        "flickr_page": "https://www.flickr.com/photos/vijji_vijju_vjay/2988022629",
+        "suggested_filename": "news19-sadar-festival-buffalo-carnival.jpg",
+        "attribution": "Photo by Vijay Bandari on Flickr (CC BY-NC-ND 2.0)"
+      },
+      "social_media": {
+        "instagram_sadar": "https://www.instagram.com/hyderabad__sadar_/",
+        "instagram_telangana_sadar": "https://www.instagram.com/telangana_sadar_festival/",
+        "instagram_reel_2025": "https://www.instagram.com/reel/DQI_d6Ak4nR/",
+        "facebook_event": "https://www.facebook.com/events/narayanaguda-x-road/narayanaguda-sadar-festival/411551339508016/",
+        "note": "These Instagram and Facebook pages have excellent high-quality Sadar festival photos"
+      },
+      "videos": [
+        {
+          "title": "Sadar Celebrations By Yadavs At Narayanguda | Hyderabad",
+          "url": "https://www.youtube.com/watch?v=DBMqnqHXj9Y",
+          "channel": "V6 News",
+          "type": "YouTube"
+        }
+      ],
+      "source_articles": [
+        {
+          "title": "Hyderabad celebrates Sadar festival with vibrant buffalo carnival, music, and tradition",
+          "url": "https://telanganatoday.com/hyderabad-celebrates-sadar-festival-with-vibrant-buffalo-carnival-music-and-tradition",
+          "publication": "Telangana Today",
+          "date": "2025-10-22"
+        },
+        {
+          "title": "Sadar (festival) — Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Sadar_(festival)",
+          "publication": "Wikipedia"
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": 15,
+      "slug": "yadav-community-scholarship-felicitation-2026",
+      "title": "Annual Scholarship Felicitation Ceremony 2026",
+      "date": "2026-10-18",
+      "venue": "Shilpakala Vedika, Banjara Hills, Hyderabad",
+      "organizer": "Yadav Community Welfare Trust",
+      "image_note": "Future event — placeholder used. Suggested: search for previous year scholarship ceremony photos on community Facebook pages.",
+      "social_media": {
+        "facebook": "https://www.facebook.com/TelanganaYadavas/photos",
+        "note": "Telangana Yadavas Sangam Facebook page posts community event photos"
+      }
+    },
+    {
+      "id": 16,
+      "slug": "gita-jayanti-2026",
+      "title": "Gita Jayanti Celebration 2026",
+      "date": "2026-12-21",
+      "venue": "NTR Stadium, Hyderabad",
+      "organizer": "Hyderabad Yadav Spiritual Foundation",
+      "image_note": "Future event — placeholder used. Search for Gita Jayanti NTR Stadium Hyderabad photos from previous years."
+    },
+    {
+      "id": 17,
+      "slug": "yadav-business-forum-hyderabad-november-2026",
+      "title": "Yadav Business Forum and Trade Fair — Hyderabad 2026",
+      "date": "2026-11-07",
+      "venue": "Hyderabad International Convention Centre (HICC)",
+      "organizer": "Yadav Business Federation and Hyderabad Yadav Mahasabha",
+      "image_note": "Future event — placeholder used.",
+      "suggested_image_sources": [
+        {
+          "description": "HICC Convention Centre exterior — available on Wikimedia Commons",
+          "url": "https://commons.wikimedia.org/wiki/File:HICC_Novotel_Hyderabad.jpg"
+        }
+      ]
+    }
+  ],
+  "social_media_pages_for_manual_browsing": {
+    "All India Yadav Mahasabha Telangana (Facebook)": "https://www.facebook.com/AIYYMTSOfficial/",
+    "Telangana Yadavas Sangam Facebook Photos": "https://www.facebook.com/TelanganaYadavas/photos",
+    "Hyderabad Sadar Instagram": "https://www.instagram.com/hyderabad__sadar_/",
+    "Telangana Sadar Festival Instagram": "https://www.instagram.com/telangana_sadar_festival/",
+    "Naveen Yadav MLA Instagram": "https://www.instagram.com/vnaveenyadav/",
+    "Naveen Yadav MLA Facebook": "https://www.facebook.com/PingNaveenYadav/photos/"
+  },
+  "download_note": "Use download-images.py script to save all images locally. Run: python download-images.py"
+}

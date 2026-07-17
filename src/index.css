@@ -1,0 +1,478 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── CSS Custom Properties / Design Tokens ─────────────────────────────── */
+:root {
+  /* Backgrounds — warm sandstone/parchment, like aguru-scented temple walls */
+  --bg:          #FFF8EF;
+  --bg-card:     #FFFDF7;
+  --bg-subtle:   #F7EDD8;
+  --bg-deep:     #0D1626;
+  --bg-saffron:  #FFF2E4;
+  --bg-krishna:  #0A1A3C;
+
+  /* Text */
+  --text:        #1A1206;
+  --text-muted:  #5C4A2A;
+  --text-subtle: #9C8460;
+  --border:      #DEC8A0;
+  --border-soft: #EDE0C4;
+
+  /* Brand tokens */
+  --gold:        #C28010;
+  --gold-light:  #E8A020;
+  --gold-pale:   #FAE8C0;
+  --krishna:     #1E3D8F;
+  --krishna-lt:  #2E5EC8;
+  --peacock:     #0A6B54;
+  --peacock-lt:  #1A9478;
+  --saffron:     #E06010;
+  --lotus:       #C03878;
+  --lotus-lt:    #E05AA0;
+  --ink:         #1A1206;
+  --ink-deep:    #0D0804;
+
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+.dark {
+  /* Midnight — the blue-black sky of Vrindavan at night */
+  --bg:          #0D1626;
+  --bg-card:     #14213A;
+  --bg-subtle:   #1A2E4E;
+  --bg-deep:     #060E1A;
+  --bg-saffron:  #1A1000;
+  --bg-krishna:  #060E1A;
+
+  --text:        #F0E4C8;
+  --text-muted:  #B8A070;
+  --text-subtle: #7A6040;
+  --border:      #2A3C5A;
+  --border-soft: #1E2E48;
+
+  --gold:        #D4A030;
+  --gold-light:  #EAB840;
+  --gold-pale:   #2E1E04;
+  --krishna:     #4878D8;
+  --krishna-lt:  #6096F0;
+  --peacock:     #1A9478;
+  --peacock-lt:  #28B894;
+  --saffron:     #E87020;
+  --lotus:       #E04890;
+  --lotus-lt:    #F070B0;
+}
+
+/* ─── Base Layer ─────────────────────────────────────────────────────────── */
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', system-ui, sans-serif;
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    text-wrap: balance;
+    line-height: 1.15;
+    color: var(--text);
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  ::selection {
+    background-color: var(--gold-pale);
+    color: var(--ink-deep);
+  }
+
+  .dark ::selection {
+    background-color: #2E1E04;
+    color: var(--gold-light);
+  }
+}
+
+/* ─── Custom Scrollbar ───────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--saffron), var(--gold));
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--gold-light); }
+
+/* ─── Traditional Indian Patterns ───────────────────────────────────────── */
+.bg-mandala-dots {
+  background-image:
+    radial-gradient(circle, rgba(194,128,16,0.14) 1.5px, transparent 1.5px);
+  background-size: 28px 28px;
+}
+
+.bg-temple-weave {
+  background-image:
+    linear-gradient(45deg, rgba(194,128,16,0.07) 25%, transparent 25%, transparent 75%, rgba(194,128,16,0.07) 75%),
+    linear-gradient(-45deg, rgba(194,128,16,0.07) 25%, transparent 25%, transparent 75%, rgba(194,128,16,0.07) 75%);
+  background-size: 20px 20px;
+}
+
+.bg-rangoli-grid {
+  background-image:
+    linear-gradient(rgba(194,128,16,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(194,128,16,0.06) 1px, transparent 1px),
+    radial-gradient(circle, rgba(194,128,16,0.1) 1px, transparent 1px);
+  background-size: 32px 32px, 32px 32px, 16px 16px;
+  background-position: 0 0, 0 0, 8px 8px;
+}
+
+.dark .bg-mandala-dots {
+  background-image:
+    radial-gradient(circle, rgba(212,160,48,0.1) 1.5px, transparent 1.5px);
+  background-size: 28px 28px;
+}
+
+.dark .bg-temple-weave {
+  background-image:
+    linear-gradient(45deg, rgba(212,160,48,0.05) 25%, transparent 25%, transparent 75%, rgba(212,160,48,0.05) 75%),
+    linear-gradient(-45deg, rgba(212,160,48,0.05) 25%, transparent 25%, transparent 75%, rgba(212,160,48,0.05) 75%);
+  background-size: 20px 20px;
+}
+
+/* ─── Component Layer ───────────────────────────────────────────────────── */
+@layer components {
+
+  /* Glassmorphism */
+  .glass {
+    background: rgba(255, 248, 239, 0.08);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid rgba(194, 128, 16, 0.15);
+  }
+
+  .glass-dark {
+    background: rgba(13, 22, 38, 0.80);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(194, 128, 16, 0.12);
+  }
+
+  /* Gradient text */
+  .text-gradient-gold {
+    background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 45%, #8B5A08 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-heritage {
+    background: linear-gradient(135deg, var(--gold-light) 0%, var(--saffron) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-krishna {
+    background: linear-gradient(135deg, var(--krishna-lt) 0%, var(--krishna) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Gold shimmer */
+  .text-shimmer {
+    background: linear-gradient(
+      90deg,
+      var(--gold) 0%,
+      var(--gold-light) 35%,
+      #FBBF24 50%,
+      var(--gold-light) 65%,
+      var(--gold) 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmer 3s linear infinite;
+  }
+
+  /* Section containers */
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* ── Traditional ornamental divider ── */
+  .divider-gold {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 1rem 0;
+  }
+
+  .divider-gold::before,
+  .divider-gold::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+
+  /* ── Heritage card (traditional double-border variant) ── */
+  .card-heritage {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+
+  /* Inner inset border — traditional double-frame motif */
+  .card-heritage::before {
+    content: '';
+    position: absolute;
+    inset: 4px;
+    border: 1px solid rgba(194, 128, 16, 0.18);
+    border-radius: 1px;
+    pointer-events: none;
+    transition: border-color 0.3s ease;
+  }
+
+  .card-heritage:hover {
+    transform: translateY(-4px);
+    border-color: var(--gold);
+    box-shadow: 0 16px 48px -8px rgba(194, 128, 16, 0.25),
+                0 0 0 1px rgba(194, 128, 16, 0.08) inset;
+  }
+
+  .card-heritage:hover::before {
+    border-color: rgba(194, 128, 16, 0.35);
+  }
+
+  /* ── Krishna blue card ── */
+  .card-krishna {
+    background: var(--bg-krishna);
+    border: 1px solid rgba(46, 94, 200, 0.4);
+    border-radius: 2px;
+    position: relative;
+  }
+
+  .card-krishna::before {
+    content: '';
+    position: absolute;
+    inset: 4px;
+    border: 1px solid rgba(46, 94, 200, 0.2);
+    border-radius: 1px;
+    pointer-events: none;
+  }
+
+  /* ── Temple section bg (alternating warm) ── */
+  .section-temple {
+    background-color: var(--bg-subtle);
+  }
+
+  .section-krishna-bg {
+    background: linear-gradient(160deg, #0A1A3C 0%, #071228 100%);
+  }
+
+  .dark .section-krishna-bg {
+    background: linear-gradient(160deg, #060E1A 0%, #030810 100%);
+  }
+
+  /* ── Ornamental border using traditional corner dots ── */
+  .border-ornament {
+    position: relative;
+  }
+
+  .border-ornament::before {
+    content: '❁';
+    position: absolute;
+    left: 50%;
+    top: -0.75rem;
+    transform: translateX(-50%);
+    color: var(--gold);
+    font-size: 0.85rem;
+    background: var(--bg);
+    padding: 0 0.5rem;
+  }
+
+  /* Peacock motif dot */
+  .dot-peacock {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--peacock);
+    box-shadow: 0 0 0 3px rgba(10, 107, 84, 0.2);
+  }
+
+  /* ── Button styles ── */
+  .btn-gold {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.75rem;
+    background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 60%, #8B5A08 100%);
+    color: #1A0C00;
+    font-weight: 700;
+    font-size: 0.875rem;
+    border-radius: 2px;
+    border: 1px solid rgba(194, 128, 16, 0.4);
+    cursor: pointer;
+    transition: all 0.25s ease;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    box-shadow: 0 2px 8px rgba(194, 128, 16, 0.3),
+                inset 0 1px 0 rgba(255,255,255,0.2);
+  }
+
+  .btn-gold:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px -4px rgba(194, 128, 16, 0.5),
+                inset 0 1px 0 rgba(255,255,255,0.25);
+  }
+
+  .btn-outline-gold {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.72rem 1.72rem;
+    background: transparent;
+    color: var(--gold);
+    font-weight: 700;
+    font-size: 0.875rem;
+    border-radius: 2px;
+    border: 1.5px solid var(--gold);
+    cursor: pointer;
+    transition: all 0.25s ease;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .btn-outline-gold:hover {
+    background: rgba(194, 128, 16, 0.08);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px -4px rgba(194, 128, 16, 0.3);
+  }
+
+  .btn-krishna {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.75rem;
+    background: linear-gradient(135deg, var(--krishna-lt) 0%, var(--krishna) 100%);
+    color: #FFFDF7;
+    font-weight: 700;
+    font-size: 0.875rem;
+    border-radius: 2px;
+    border: 1px solid rgba(30, 61, 143, 0.4);
+    cursor: pointer;
+    transition: all 0.25s ease;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    box-shadow: 0 2px 8px rgba(30, 61, 143, 0.3);
+  }
+
+  .btn-krishna:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px -4px rgba(30, 61, 143, 0.5);
+  }
+
+  /* Focus styles */
+  :focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  /* Page transition wrapper */
+  .page-fade {
+    animation: fadeUp 0.5s ease-out both;
+  }
+}
+
+/* ─── Utility Layer ─────────────────────────────────────────────────────── */
+@layer utilities {
+  .font-display { font-family: 'Cormorant Garamond', Georgia, serif; }
+
+  .text-balance { text-wrap: balance; }
+
+  .bg-token { background-color: var(--bg); }
+  .bg-card-token { background-color: var(--bg-card); }
+  .bg-subtle-token { background-color: var(--bg-subtle); }
+  .text-token { color: var(--text); }
+  .text-muted-token { color: var(--text-muted); }
+  .border-token { border-color: var(--border); }
+
+  .tabular { font-variant-numeric: tabular-nums; }
+
+  .overflow-x-scroll-contained {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* ─── News ticker ────────────────────────────────────────────────────────── */
+@keyframes ticker {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.ticker-track {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: ticker 38s linear infinite;
+}
+.ticker-track:hover { animation-play-state: paused; }
+
+/* ─── Mandala / Peacock SVG decorations ─────────────────────────────────── */
+.mandala-rotate {
+  animation: spin 40s linear infinite;
+  transform-origin: center;
+}
+
+.mandala-rotate-reverse {
+  animation: spin 60s linear infinite reverse;
+  transform-origin: center;
+}
+
+/* ─── Swiper overrides ──────────────────────────────────────────────────── */
+.swiper-pagination-bullet {
+  background: var(--gold) !important;
+  opacity: 0.4;
+}
+.swiper-pagination-bullet-active {
+  opacity: 1 !important;
+  background: var(--gold) !important;
+}
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--gold) !important;
+}
+
+/* ─── Reduced motion ────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
