@@ -5,4 +5,5 @@
 [[redirects]]
   from = "/"
   to = "/YEvent-Images/yadav-daily-news.html"
-  status = 302
+  status = 200
+  force = true
