@@ -45,6 +45,25 @@ a { text-decoration: none; color: inherit; }
   border-bottom: 3px solid transparent; white-space: nowrap; }
 .nav-bar a:hover, .nav-bar a.active { color: white; border-bottom-color: var(--gold); }
 
+/* ── LANGUAGE TOGGLE ── */
+.lang-toggle { display: flex; align-items: center; gap: 6px; margin-left: 16px; }
+.lang-btn {
+  background: transparent; border: 1px solid rgba(255,255,255,0.35); border-radius: 4px;
+  color: rgba(255,255,255,0.75); font-family: sans-serif; font-size: 0.75rem;
+  font-weight: 600; padding: 4px 10px; cursor: pointer; transition: all 0.2s; letter-spacing: 0.3px;
+}
+.lang-btn:hover { background: rgba(255,255,255,0.15); color: white; border-color: rgba(255,255,255,0.6); }
+.lang-btn.active { background: var(--gold); border-color: var(--gold); color: white; }
+.lang-sep { color: rgba(255,255,255,0.35); font-size: 0.8rem; }
+/* Hide Google's top banner that shifts the page */
+.goog-te-banner-frame { display: none !important; }
+body { top: 0 !important; }
+/* Visually hidden but still rendered so Google can inject its combo */
+#google_translate_element {
+  position: absolute; top: -9999px; left: -9999px;
+  width: 1px; height: 1px; overflow: hidden;
+}
+
 /* ── TICKER ── */
 .ticker-wrap { background: var(--gold); color: white; padding: 6px 0; overflow: hidden; }
 .ticker-inner { display: flex; gap: 60px; animation: ticker 40s linear infinite; white-space: nowrap; padding: 0 32px; }
@@ -304,8 +323,17 @@ footer .updated { color: var(--gold); font-weight: 600; }
         <p>Hyderabad Yadav Community — News, Events &amp; Heritage</p>
       </div>
     </div>
-    <div class="masthead-date" id="headerDate"></div>
+    <div style="display:flex;align-items:center;gap:16px;">
+      <div class="masthead-date" id="headerDate"></div>
+      <div class="lang-toggle">
+        <button class="lang-btn active" id="btn-en" onclick="setLang('en')">🇮🇳 English</button>
+        <span class="lang-sep">|</span>
+        <button class="lang-btn" id="btn-te" onclick="setLang('te')">తెలుగు</button>
+      </div>
+    </div>
   </div>
+  <!-- Hidden Google Translate element -->
+  <div id="google_translate_element"></div>
   <nav class="nav-bar">
     <a href="#latest" class="active">Latest News</a>
     <a href="#events">Upcoming Events</a>
@@ -423,6 +451,56 @@ footer .updated { color: var(--gold); font-weight: 600; }
     <p>Source: Community leaders, news agencies, government announcements</p>
   </div>
 </footer>
+
+<!-- ── GOOGLE TRANSLATE ── -->
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en',
+    includedLanguages: 'en,te',
+    autoDisplay: false
+  }, 'google_translate_element');
+}
+
+function setLang(lang) {
+  // Update button appearance immediately
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  document.getElementById('btn-te').classList.toggle('active', lang === 'te');
+
+  // Try the Google Translate combo if available, with retry while GT loads
+  var attempts = 0;
+  function tryTranslate() {
+    var select = document.querySelector('select.goog-te-combo');
+    if (select) {
+      select.value = lang;
+      if (typeof select.dispatchEvent === 'function') {
+        select.dispatchEvent(new Event('change'));
+      } else if (typeof select.fireEvent === 'function') {
+        select.fireEvent('onchange');
+      }
+      return;
+    }
+    attempts++;
+    if (attempts < 10) {
+      // Retry every 500ms while Google Translate initialises
+      setTimeout(tryTranslate, 500);
+    } else {
+      // Final fallback: set cookie and reload
+      if (lang === 'te') {
+        document.cookie = 'googtrans=/en/te; path=/';
+        document.cookie = 'googtrans=/en/te; path=/; domain=.' + location.hostname;
+      } else {
+        var exp = 'expires=Thu, 01 Jan 1970 00:00:00 UTC';
+        document.cookie = 'googtrans=; ' + exp + '; path=/';
+        document.cookie = 'googtrans=; ' + exp + '; path=/; domain=.' + location.hostname;
+      }
+      location.reload();
+    }
+  }
+  tryTranslate();
+}
+</script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 <!-- ═══════════════════════════════════════════════════
      DATA — updated daily by Claude scheduled task
