@@ -428,17 +428,28 @@ footer .updated { color: var(--gold); font-weight: 600; }
      DATA — updated daily by Claude scheduled task
      ═══════════════════════════════════════════════════ -->
 <script>
-const LAST_UPDATED = "2026-07-17";
+const LAST_UPDATED = "2026-07-18";
 
 // NEWS — sorted newest to oldest by publishedAt
 const NEWS = [
+  {
+    id: 25,
+    title: "Nampally Court Grants Bail to YSRCP Leader Nagarjuna Yadav",
+    excerpt: "A Nampally court on July 17 granted bail to YSRCP state spokesperson Nagarjuna Yadav, arrested by Telangana police over remarks made against CM Revanth Reddy during a TV debate two years ago. The case drew wide political attention across both states.",
+    category: "politics",
+    publishedAt: "2026-07-17",
+    imageUrl: "https://munsifdaily.com/wp-content/uploads/2026/07/2-2.jpg",
+    featured: false,
+    tags: ["Nagarjuna Yadav", "bail", "YSRCP", "Nampally court", "Telangana"],
+    sourceUrl: "https://munsifdaily.com/nampally-court-grants-bail-to-ysrcp-leader/"
+  },
   {
     id: 23,
     title: "TPCC Panel Concludes Conspiracy Behind Shivcharan Reddy–Eshwaramma Yadav Row",
     excerpt: "A three-member TPCC inquiry committee has concluded that outside interference and conspiracy were behind the row involving Youth Congress chief Jakkidi Shivcharan Reddy and Yadagirigutta Trust member Eshwaramma Yadav, calling the matter 'blown out of proportion'.",
     category: "politics",
     publishedAt: "2026-07-17",
-    imageUrl: "https://picsum.photos/id/488/800/500",
+    imageUrl: "https://assets.thehansindia.com/h-upload/2026/07/16/1678029-congress.jpg",
     featured: false,
     tags: ["TPCC inquiry", "Eshwaramma Yadav", "Shivcharan Reddy", "Congress", "Yadagirigutta"],
     sourceUrl: "https://www.thehansindia.com/telangana/congress-panel-smells-a-rat-in-reddy-yadav-row-1098018"
@@ -449,7 +460,7 @@ const NEWS = [
     excerpt: "Telangana Congress BC cell leaders have demanded strong action against Youth Congress president Jakkidi Shivcharan Reddy for his alleged derogatory remarks targeting Yadagirigutta Devasthanam Trust Board member Eshwaramma Yadav.",
     category: "community",
     publishedAt: "2026-07-17",
-    imageUrl: "https://picsum.photos/id/522/800/500",
+    imageUrl: "https://assets.thehansindia.com/h-upload/2026/07/16/1678029-congress.jpg",
     featured: false,
     tags: ["BC leaders", "Eshwaramma Yadav", "Congress", "Yadav dignity", "Telangana"],
     sourceUrl: "https://telanganatoday.com/congress-bc-leaders-fume-over-youth-congress-president-shivcharan-reddys-remarks-demand-action"
@@ -460,7 +471,7 @@ const NEWS = [
     excerpt: "A three-member TPCC inquiry panel is investigating the row between Youth Congress president Jakkidi Shivcharan Reddy and Yadagirigutta Devasthanam Trust Board member Eshwaramma Yadav, with rival group clashes and allegations of AI-fabricated audio at the centre of the controversy.",
     category: "politics",
     publishedAt: "2026-07-16",
-    imageUrl: "https://picsum.photos/id/823/800/500",
+    imageUrl: "https://assets.thehansindia.com/h-upload/2026/07/16/1678029-congress.jpg",
     featured: false,
     tags: ["Eshwaramma Yadav", "Shivcharan Reddy", "TPCC inquiry", "Yadagirigutta", "Congress"],
     sourceUrl: "https://telanganatoday.com/the-rift-between-shivcharan-reddy-and-eshwaramma-yadavs-groups-fails-to-die-down"
@@ -471,7 +482,7 @@ const NEWS = [
     excerpt: "The Telangana ePASS Scholarship 2026 is now accepting applications from BC (OBC) students including Yadav youth, covering pre-matric, post-matric, and overseas scholarships through an Aadhaar-linked online portal.",
     category: "education",
     publishedAt: "2026-07-16",
-    imageUrl: "https://picsum.photos/id/119/800/500",
+    imageUrl: "https://assets.thehansindia.com/h-upload/2026/01/01/1613292-epass.jpg",
     featured: false,
     tags: ["ePASS", "scholarship", "OBC", "BC welfare", "Telangana", "education"],
     sourceUrl: "https://leverageedu.com/discover/indian-scholarships/telangana-epass-scholarship/"
@@ -482,7 +493,7 @@ const NEWS = [
     excerpt: "Reports indicate that Suryakumar Yadav remains in consideration for India's T20I squad, keeping hopes alive for fans of the batting maestro who is a celebrated Yadav sports icon.",
     category: "sports",
     publishedAt: "2026-07-15",
-    imageUrl: "https://picsum.photos/id/261/800/500",
+    imageUrl: "https://images.icc-cricket.com/image/upload/t_player-headshot-portrait-lg-webp/prd/assets/players/13203/11803.png",
     featured: false,
     tags: ["Suryakumar Yadav", "cricket", "T20I", "India", "sports"],
     sourceUrl: "https://www.yardbarker.com/cricket/articles/reports_indias_t20i_doors_still_open_for_suryakumar_yadav/s1_17728_44056672"
@@ -493,7 +504,7 @@ const NEWS = [
     excerpt: "The PM Yashasvi Scholarship Scheme 2026-27 is open for OBC students including Yadav youth, offering up to ₹1.25 lakh per year. Last date to apply is August 31, 2026.",
     category: "education",
     publishedAt: "2026-07-14",
-    imageUrl: "https://picsum.photos/id/20/800/500",
+    imageUrl: "https://assets.thehansindia.com/h-upload/2026/01/01/1613292-epass.jpg",
     featured: false,
     tags: ["scholarship", "PM Yashasvi", "OBC", "education", "youth"],
     sourceUrl: "https://scholarships.gov.in"
@@ -537,7 +548,7 @@ const NEWS = [
     excerpt: "The Telangana SEEEPC caste census reveals Yadava (Golla) is the third-largest Backward Class community in the state with over 20 lakh people across 6.39 lakh households.",
     category: "community",
     publishedAt: "2026-04-20",
-    imageUrl: "https://picsum.photos/id/819/800/500",
+    imageUrl: "https://s3.ap-south-1.amazonaws.com/media.thesouthfirst.com/wp-content/uploads/2026/04/iStock-2222585111.jpg",
     featured: true,
     tags: ["caste census", "SEEEPC", "Yadava Golla", "OBC", "Telangana"],
     sourceUrl: ""
@@ -548,7 +559,7 @@ const NEWS = [
     excerpt: "Former Minister Talasani Srinivas Yadav vowed to continue the agitation demanding a separate Secunderabad Municipal Corporation, opposing the Congress government's merger plans.",
     category: "politics",
     publishedAt: "2026-01-20",
-    imageUrl: "https://picsum.photos/id/866/800/500",
+    imageUrl: "https://www.deccanchronicle.com/h-upload/2026/01/14/2000097-talasani-srinivas-yadav-case.jpg",
     featured: false,
     tags: ["Talasani Srinivas Yadav", "Secunderabad", "BRS", "agitation"],
     sourceUrl: ""
@@ -559,7 +570,7 @@ const NEWS = [
     excerpt: "Vallala Naveen Yadav secured a historic victory in the Jubilee Hills by-election, defeating BRS candidate Maganti Sunitha by over 24,729 votes — a major win for the Yadav community.",
     category: "politics",
     publishedAt: "2025-11-14",
-    imageUrl: "https://static.india.com/wp-content/uploads/2025/11/India.com-2025-11-14T152552.347.jpg",
+    imageUrl: "https://www.deccanchronicle.com/h-upload/2025/11/26/1982888-naveen-.jpg",
     featured: true,
     tags: ["Naveen Yadav", "Jubilee Hills", "by-election", "Congress", "Telangana"],
     sourceUrl: "https://www.india.com/news/india/jubilee-hills-bypoll-results-2025-naveen-yadav-secures-big-win-for-congress-in-telangana-8184120/"
@@ -570,7 +581,7 @@ const NEWS = [
     excerpt: "The Telangana Congress government declared Sadar Sammelan a State Festival. The 2025 edition drew massive crowds at Narayanguda, Saidabad, Ameerpet, and Khairatabad.",
     category: "culture",
     publishedAt: "2025-10-20",
-    imageUrl: "https://picsum.photos/id/680/800/500",
+    imageUrl: "https://cdn.siasat.com/wp-content/uploads/2024/11/Sadar-Festival-in-Hyderabad.jpg",
     featured: true,
     tags: ["Sadar", "state festival", "buffalo carnival", "Dunnapothula", "culture"],
     sourceUrl: ""
@@ -581,7 +592,7 @@ const NEWS = [
     excerpt: "Telangana CM A. Revanth Reddy participated in the Sri Krishna Sadar Sammelan and promised the Yadav community political representation and full government support.",
     category: "politics",
     publishedAt: "2025-10-19",
-    imageUrl: "https://picsum.photos/id/763/800/500",
+    imageUrl: "https://www.tgnns.com/wp-content/uploads/2025/10/CM-Revanth-Reddy-Ignites-Hope-at-Sadar-Festival-2025.jpeg",
     featured: true,
     tags: ["Revanth Reddy", "Sadar Sammelan", "political promise", "welfare"],
     sourceUrl: ""
@@ -592,7 +603,7 @@ const NEWS = [
     excerpt: "Telangana Minister Talasani Srinivas Yadav convened a meeting on constructing dedicated community halls for the Golla and Kuruma communities across Telangana.",
     category: "community",
     publishedAt: "2025-09-10",
-    imageUrl: "https://picsum.photos/id/725/800/500",
+    imageUrl: "https://cdn.siasat.com/wp-content/uploads/2025/06/Golla-Kuruma-scaled.jpg",
     featured: false,
     tags: ["Golla Kuruma", "Bhavan", "Srinivas Yadav", "welfare"],
     sourceUrl: ""
@@ -603,7 +614,7 @@ const NEWS = [
     excerpt: "The pan-India rally reached Hyderabad demanding a dedicated Yadav Regiment in the Indian Army and felicitating outstanding community members across the state.",
     category: "community",
     publishedAt: "2025-08-16",
-    imageUrl: "https://picsum.photos/id/509/800/500",
+    imageUrl: "https://www.deccanchronicle.com/h-upload/2025/08/15/1948387-download-32.jpg",
     featured: true,
     tags: ["mahasabha", "rally", "army", "Yadav regiment", "national"],
     sourceUrl: ""
@@ -614,7 +625,7 @@ const NEWS = [
     excerpt: "CM Revanth Reddy unveiled the landmark socio-economic caste survey. Yadavas are identified as one of four major vulnerable communities, and the state passed a 42% OBC reservation bill.",
     category: "politics",
     publishedAt: "2025-07-25",
-    imageUrl: "https://picsum.photos/id/633/800/500",
+    imageUrl: "https://s3.ap-south-1.amazonaws.com/media.thesouthfirst.com/wp-content/uploads/2026/04/iStock-2222585111.jpg",
     featured: true,
     tags: ["caste survey", "OBC", "reservation", "Revanth Reddy", "Telangana"],
     sourceUrl: ""
@@ -625,7 +636,7 @@ const NEWS = [
     excerpt: "Community members gathered at Gandhi Bhavan in Hyderabad, demanding a ministerial post and a Rs 5,000 crore welfare fund from the Telangana Congress government.",
     category: "politics",
     publishedAt: "2025-06-23",
-    imageUrl: "https://picsum.photos/id/575/800/500",
+    imageUrl: "https://cdn.siasat.com/wp-content/uploads/2025/06/Golla-Kuruma-scaled.jpg",
     featured: false,
     tags: ["protest", "politics", "cabinet", "Golla Kuruma", "welfare"],
     sourceUrl: ""
@@ -636,7 +647,7 @@ const NEWS = [
     excerpt: "The Trust has committed ₹2 crore to support higher education for 200 deserving students annually, covering engineering, medical, and law courses at premier institutions.",
     category: "education",
     publishedAt: "2025-06-15",
-    imageUrl: "https://picsum.photos/id/160/800/500",
+    imageUrl: "https://assets.thehansindia.com/h-upload/2026/01/01/1613292-epass.jpg",
     featured: true,
     tags: ["scholarship", "education", "welfare", "youth"],
     sourceUrl: ""
@@ -647,7 +658,7 @@ const NEWS = [
     excerpt: "The grand Janmashtami Mahotsav at Sri Krishna Mandir is set to be the largest in the temple's 40-year history, with cultural programs spanning three days.",
     category: "culture",
     publishedAt: "2025-06-10",
-    imageUrl: "https://picsum.photos/id/217/800/500",
+    imageUrl: "https://www.deccanchronicle.com/h-upload/2025/08/16/1948475-untitled-design-11.jpg",
     featured: true,
     tags: ["janmashtami", "festival", "krishna", "temple"],
     sourceUrl: ""
@@ -658,7 +669,7 @@ const NEWS = [
     excerpt: "In a historic election conducted across 24 mandals, the new executive committee was sworn in with a renewed vision for community development.",
     category: "community",
     publishedAt: "2025-05-28",
-    imageUrl: "https://picsum.photos/id/274/800/500",
+    imageUrl: "https://www.deccanchronicle.com/h-upload/2025/08/15/1948387-download-32.jpg",
     featured: false,
     tags: ["mahasabha", "elections", "leadership", "community"],
     sourceUrl: ""
@@ -669,7 +680,7 @@ const NEWS = [
     excerpt: "The annual Business Expo at HICC drew record participation with entrepreneurs from dairy, IT, construction, and FMCG sectors showcasing innovations and forming new partnerships.",
     category: "business",
     publishedAt: "2025-05-12",
-    imageUrl: "https://picsum.photos/id/335/800/500",
+    imageUrl: "https://startupuploads.s3.ap-south-1.amazonaws.com/wp-content/uploads/2025/12/Young-Entrepreneurs-Summit-.png",
     featured: false,
     tags: ["business", "expo", "entrepreneurship", "HICC"],
     sourceUrl: ""
@@ -680,7 +691,7 @@ const NEWS = [
     excerpt: "The Yadav Community Health Foundation conducted free medical camps across 12 locations, providing diagnostics, medicines, and specialist consultations at no cost.",
     category: "community",
     publishedAt: "2025-04-30",
-    imageUrl: "https://picsum.photos/id/390/800/500",
+    imageUrl: "https://sevabharathi.org/wp-content/uploads/2025/12/WhatsApp-Image-2025-12-31-at-3.37.56-PM.jpeg",
     featured: false,
     tags: ["health", "welfare", "community service"],
     sourceUrl: ""
@@ -691,7 +702,7 @@ const NEWS = [
     excerpt: "Over 500 young professionals and students gathered for a two-day summit focused on leadership, technology careers, and community responsibility.",
     category: "education",
     publishedAt: "2025-04-18",
-    imageUrl: "https://picsum.photos/id/430/800/500",
+    imageUrl: "https://startupuploads.s3.ap-south-1.amazonaws.com/wp-content/uploads/2025/12/Young-Entrepreneurs-Summit-.png",
     featured: true,
     tags: ["youth", "leadership", "summit", "careers"],
     sourceUrl: ""
@@ -848,7 +859,7 @@ const PERSONALITIES = [
   {
     name: "Talasani Srinivas Yadav",
     role: "Former Minister, BRS — Sanathnagar, Hyderabad",
-    birthday: "1965-07-18",
+    birthday: "1965-10-06",
     emoji: "⚖️",
     note: "Key Yadav political voice in Telangana",
     instagram: ""
