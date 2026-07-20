@@ -323,6 +323,66 @@ footer strong{color:#fff}
 
 .hidden{display:none!important}
 .divider{border:none;border-top:1px solid var(--border);margin:20px 0}
+
+/* ══════════════════════════════════════
+   19. MOBILE OVERFLOW — NUCLEAR FIX
+   Prevents ANY element bleeding outside
+   the viewport on small screens
+══════════════════════════════════════ */
+html,body{overflow-x:hidden!important;width:100%!important;max-width:100vw!important}
+
+/* Every block-level element stays inside viewport */
+.top-bar,.site-header,.sticky-nav,.nav-inner,.breaking-bar,
+.container,.main-grid,.section-block,.section-head,
+.hero-mobile,.hero-desktop,.hero-wrap,.hero-track,.hero-slide,
+.filter-wrap,.news-grid,.nc,.nc-img,.nc-body,
+.events-grid,.ev-card,.ev-card-img,
+.sangham-tabs,.sangham-panel,.sp-photos,.sp-photo,
+.all-news-grid,.festival-banner,.submit-section,.sf-grid,
+.sidebar,.sb-box,.sb-body,.social-row,footer{
+  max-width:100%!important;
+  box-sizing:border-box!important;
+}
+
+/* All images absolutely constrained */
+img{
+  display:block!important;
+  width:100%!important;
+  max-width:100%!important;
+  height:auto;
+  object-fit:cover;
+}
+/* Restore explicit heights where needed */
+.hero-slide img{height:clamp(190px,50vw,380px)!important}
+.nc-img img{height:140px!important}
+.ev-card-img img{height:110px!important;width:100%!important}
+.sp-photo img{height:100%!important;width:100%!important}
+.hb-img img{height:60px!important;width:80px!important}
+
+/* Hero carousel — lock slides to container width */
+.hero-wrap{overflow:hidden!important;position:relative}
+.hero-track{width:100%!important;overflow:hidden!important}
+.hero-slide{width:100%!important;min-width:100%!important;flex-shrink:0;overflow:hidden!important}
+
+/* Grid children must not overflow */
+.main-grid>*{min-width:0;overflow:hidden}
+.news-grid>*,.events-grid>*,.all-news-grid>*{min-width:0;overflow:hidden}
+
+/* Sadar banner chips wrap properly */
+.festival-banner{overflow:hidden}
+.fb-chips{flex-wrap:wrap}
+.fb-chip{white-space:normal;word-break:break-word}
+
+/* Ticker animations — clip to container */
+.bb-text,.top-bar .tb-ticker{overflow:hidden!important;min-width:0!important}
+
+/* Sangham photo grid — 3 columns on mobile can be too tight */
+@media(max-width:480px){
+  .sp-photos{grid-template-columns:repeat(2,1fr)}
+}
+
+/* Section block never overflows */
+.section-block{overflow:hidden;width:100%}
 </style>
 </head>
 <body>
